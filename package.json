@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/Portfolio/ --no-silent"
+    "deploy": "ng deploy --base-href=/Portfolio/ --repo=https://github.com/pravinmane1/Portfolio.git --no-silent"
   },
   "private": true,
   "dependencies": {
