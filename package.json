@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/Portfolio/",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build && npx angular-cli-ghpages --dir=dist/portfolio/browser --no-silent"
+    "deploy": "npm run build && npx angular-cli-ghpages --dir=dist/portfolio/browser --cname=pravinmane.com --no-silent"
   },
   "private": true,
   "dependencies": {
