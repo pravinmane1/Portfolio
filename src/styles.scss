@@ -7,24 +7,25 @@ body.light {
   @include lighten();
 }
 
-body{
-  background-color: var(--bgColor);
-}
-$clr-primary-200: #add8e6;
-$clr-primary-400: #2da9e5;
-$clr-primary-450: #3f6987;
-$clr-primary-500: #0159a1;
+$clr-primary-200: var(--clr-primary-200);
+$clr-primary-400: var(--clr-primary-400);
+$clr-primary-450: var(--clr-primary-450);
+$clr-primary-500: var(--clr-primary-500);
 
-$clr-secondary-400: #018940;
+$clr-secondary-400: var(--clr-secondary-400);
 
-$clr-neutral-100: hsl(100, 100%, 100%);
-$clr-neutral-150: hsl(0, 0%, 91%);
-$clr-neutral-200: hsla(0, 17%, 83%, 0.612);
-$clr-neutral-250: hsl(0, 0%, 50%);
-$clr-neutral-300: hsla(0, 0%, 31%, 0.431);
-$clr-neutral-900: hsl(0, 0%, 0%);
+$clr-neutral-100: var(--clr-neutral-100);
+$clr-neutral-150: var(--clr-neutral-150);
+$clr-neutral-200: var(--clr-neutral-200);
+$clr-neutral-250: var(--clr-neutral-250);
+$clr-neutral-300: var(--clr-neutral-300);
+$clr-neutral-900: var(--clr-neutral-900);
 
 $ff-primary: "Montserrat", sans-serif;
+
+body {
+  background-color: $clr-primary-200;
+}
 
 $fw-regular: 300;
 $fw-semi-bold: 400;
@@ -106,16 +107,14 @@ svg {
   }
 }
 
-
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome and Opera */
-  }
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
 
 /* Utility classes */
 
@@ -191,4 +190,3 @@ svg {
 .fs-500 {
   font-size: $fs-500;
 }
-
