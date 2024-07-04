@@ -1,3 +1,15 @@
+@import "styles/variables";
+
+body.dark {
+  @include darken();
+}
+body.light {
+  @include lighten();
+}
+
+body{
+  background-color: var(--bgColor);
+}
 $clr-primary-200: #add8e6;
 $clr-primary-400: #2da9e5;
 $clr-primary-450: #3f6987;
