@@ -3,7 +3,6 @@ import { Component, isDevMode } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PortfolioComponent } from './core/components/portfolio/portfolio.component';
 import { UnderDevelopmentComponent } from './core/components/under-development/under-development.component';
-import { ModeToggleComponent } from './features/mode-toggle/mode-toggle.component';
 import {
   MODE_STORAGE_SERVICE,
   ModeLocalStorageService,
@@ -18,7 +17,6 @@ import { ModeToggleService } from './features/mode-toggle/mode-toggle.service';
     CommonModule,
     UnderDevelopmentComponent,
     PortfolioComponent,
-    ModeToggleComponent,
   ],
   providers: [
     ModeToggleService,
