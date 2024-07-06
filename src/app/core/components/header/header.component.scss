@@ -1,0 +1,15 @@
+.header-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 1rem 2rem;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.profile-image {
+  border-radius: 50%;
+  margin: 0.5rem;
+}

@@ -24,7 +24,8 @@ $clr-neutral-900: var(--clr-neutral-900);
 $ff-primary: "Montserrat", sans-serif;
 
 body {
-  background-color: $clr-primary-200;
+  background-color: $clr-neutral-100;
+  color: $clr-neutral-900;
 }
 
 $fw-regular: 300;
@@ -75,7 +76,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
