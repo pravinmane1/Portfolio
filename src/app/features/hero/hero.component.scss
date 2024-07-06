@@ -1,0 +1,84 @@
+@import "../../../styles.scss";
+
+.hero-section {
+  padding: 4rem 8rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: calc(100vh - 6rem);
+  justify-content: space-evenly;
+}
+
+.hero-image {
+  border-radius: 50%;
+}
+
+.hero-content {
+  // flex-grow: 1;
+}
+.title-statement {
+  font-size: 2rem;
+  font-weight: 500;
+  max-width: 40rem;
+}
+
+.p1 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #0202ab;
+  letter-spacing: 0.05em;
+}
+
+.gradient {
+  font-size: 5rem;
+  font-weight: 800;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.t1 {
+  background-image: linear-gradient(to bottom right, #d100d1, #a100f2, #2d00f7);
+}
+
+.t2 {
+  background-image: linear-gradient(to bottom right, #a100f2, #2d00f7, #d100d1);
+}
+.gradient::before {
+  color: $clr-neutral-900;
+  position: absolute;
+}
+
+.t1::before {
+  content: "Pravin";
+  animation: gradient-background-1 8s infinite;
+}
+.t2::before {
+  content: "Mane.";
+  animation: gradient-background-2 8s infinite;
+}
+
+@keyframes gradient-background-1 {
+  40%,
+  70% {
+    opacity: 0;
+  }
+  70%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gradient-background-2 {
+  70%,
+  90% {
+    opacity: 0;
+  }
+  0%,
+  30% {
+    opacity: 1;
+  }
+}
+
+.name-holder {
+  letter-spacing: -0.03em;
+}
