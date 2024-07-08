@@ -2,11 +2,12 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  margin: 1rem 2rem;
+  margin: 0 2rem;
 }
 
-.grow {
+.navbar {
   flex-grow: 1;
+  margin: 1.5rem 0;
 }
 
 .profile-image {

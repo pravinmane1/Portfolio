@@ -2,3 +2,11 @@
   flex-grow: 1;
   padding: 0 2rem;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  -webkit-backdrop-filter: blur(3rem);
+  backdrop-filter: blur(3rem);
+}
