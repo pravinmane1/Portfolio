@@ -1,20 +1,22 @@
 @import "../../../styles.scss";
 
 .hero-section {
-  padding: 4rem 8rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  height: calc(100vh - 6rem);
-  justify-content: space-evenly;
+  min-height: calc(100vh - 6rem);
+  justify-content: center;
+  gap: 6rem;
 }
 
 .hero-image {
   border-radius: 50%;
+  margin: 1rem;
 }
 
 .hero-content {
-  // flex-grow: 1;
+  margin: 1rem;
 }
 .title-statement {
   font-size: 2rem;
@@ -81,4 +83,30 @@
 
 .name-holder {
   letter-spacing: -0.03em;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .hero-section {
+    padding: 1rem;
+    flex-flow: column nowrap;
+    gap: 0;
+  }
+
+  .gradient {
+    font-size: 4rem;
+  }
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+  }
+
+  .title-statement {
+    font-size: 1.5rem;
+  }
 }
