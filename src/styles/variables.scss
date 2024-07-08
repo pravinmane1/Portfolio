@@ -1,22 +1,33 @@
-$bgColor_light: white;
-$bgColor_dark: black;
-
-$textColor_light: black;
-$textColor_dark: white;
-
-$borderColor_light: black;
-$borderColor_dark: white;
-
 // mixin that enables css variables in light mode
 @mixin lighten() {
-  --bgColor: #{$bgColor_light};
-  --textColor: #{$textColor_light};
-  --borderColor: #{$borderColor_light};
+  --clr-primary-200: #add8e6;
+  --clr-primary-400: #2da9e5;
+  --clr-primary-450: #3f6987;
+  --clr-primary-500: #0159a1;
+
+  --clr-secondary-400: #018940;
+
+  --clr-neutral-100: hsl(100, 100%, 100%);
+  --clr-neutral-150: hsl(0, 0%, 91%);
+  --clr-neutral-200: hsla(0, 17%, 83%, 0.612);
+  --clr-neutral-250: hsl(0, 0%, 50%);
+  --clr-neutral-300: hsla(0, 0%, 31%, 0.431);
+  --clr-neutral-900: hsl(0, 0%, 0%);
 }
 
 // mixin that enables css variables in dark mode
 @mixin darken() {
-  --bgColor: #{$bgColor_dark};
-  --textColor: #{$textColor_dark};
-  --borderColor: #{$borderColor_dark};
+  --clr-primary-200: #042732;
+  --clr-primary-400: #2da9e5;
+  --clr-primary-450: #3f6987;
+  --clr-primary-500: #0159a1;
+
+  --clr-secondary-400: #018940;
+
+  --clr-neutral-100: hsl(0, 0%, 0%);
+  --clr-neutral-150: hsl(0, 0%, 91%);
+  --clr-neutral-200: hsla(0, 17%, 83%, 0.612);
+  --clr-neutral-250: hsl(0, 0%, 50%);
+  --clr-neutral-300: hsla(0, 0%, 31%, 0.431);
+  --clr-neutral-900: hsl(100, 100%, 100%);
 }

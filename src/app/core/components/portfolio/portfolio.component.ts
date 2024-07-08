@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { ModeToggleComponent } from '../../../features/mode-toggle/mode-toggle.component';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { HeroComponent } from '../../../features/hero/hero.component';
+import { AboutComponent } from '../../../features/about/about.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ModeToggleComponent],
+  imports: [HeaderComponent, FooterComponent, HeroComponent, AboutComponent],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+  styleUrl: './portfolio.component.scss',
 })
-export class PortfolioComponent {
-
-}
+export class PortfolioComponent {}
