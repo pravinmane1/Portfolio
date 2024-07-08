@@ -4,14 +4,16 @@
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 4;
   -webkit-backdrop-filter: blur(3rem);
   backdrop-filter: blur(3rem);
 }
 
-@media (max-width: 800) {
+@media (max-width: 800px) {
   .expand {
     padding: 0 1rem;
   }

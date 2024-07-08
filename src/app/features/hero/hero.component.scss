@@ -5,7 +5,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  min-height: calc(100vh - 6rem);
+  min-height: 100vh;
   justify-content: center;
   gap: 6rem;
 }
@@ -93,6 +93,10 @@
     padding: 1rem;
     flex-flow: column nowrap;
     gap: 0;
+  }
+
+  .name-holder {
+    flex-wrap: wrap;
   }
 
   .gradient {

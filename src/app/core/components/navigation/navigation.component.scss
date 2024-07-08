@@ -14,3 +14,12 @@
   color: $clr-neutral-900;
   text-decoration: none;
 }
+
+@media (max-width: 800px) {
+  .nav-bar {
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
