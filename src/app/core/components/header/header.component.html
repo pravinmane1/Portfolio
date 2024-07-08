@@ -1,13 +1,18 @@
-<header class="header-container">
+<header
+  class="header-container"
+  [ngClass]="{
+    'hide-header': !isHeaderVisible()
+  }"
+>
   <img
-    ngSrc="/assets/profile_image.jpg"
-    height="30"
-    width="30"
+    ngSrc="/assets/logo-color.svg"
+    height="70"
+    width="70"
     alt="profile image"
     class="profile-image"
     ngSrcset="100w, 200w, 300w"
     priority
   />
   <app-navigation class="navbar"></app-navigation>
-  <app-mode-toggle></app-mode-toggle>
+  <app-mode-toggle class="mode-toggle"></app-mode-toggle>
 </header>

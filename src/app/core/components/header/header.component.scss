@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   align-items: center;
   margin: 0 2rem;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .navbar {
@@ -11,6 +12,20 @@
 }
 
 .profile-image {
-  border-radius: 50%;
-  margin: 0.5rem;
+  // border-radius: 50%;
+  // margin: 0.5rem;
+}
+
+.hide-header {
+  transform: translateY(-3rem);
+  height: 0;
+}
+
+@media (max-width: 800px) {
+  .header-container {
+    justify-content: space-between;
+  }
+  .navbar {
+    display: none;
+  }
 }

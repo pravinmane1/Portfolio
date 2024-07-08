@@ -1,21 +1,38 @@
 .toggle-btn-container {
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  
-    span {
-      padding: 2px 4px;
-    }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
-  
-  .light {
-    border: 2px solid black;
-    background: white;
+
+  span {
+    padding: 2px 4px;
   }
-  .dark {
-    background: black;
-    border: 2px solid black;
-    color: white;
-  }
+}
+
+.light {
+  border: 2px solid black;
+  background: white;
+}
+.dark {
+  background: black;
+  border: 2px solid black;
+  color: white;
+}
+
+.transform-icon {
+  transform: translate(0, 0) rotate(-180deg) skewX(0) skewY(0) scaleX(1)
+    scaleY(1);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.rotate-180 {
+  transform: translate(0, 0) rotate(-180deg) skewX(0) skewY(0) scaleX(1)
+    scaleY(1);
+}
+
+.rotate-0 {
+  transform: translate(0, 0) rotate(0deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
