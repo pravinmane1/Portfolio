@@ -1,5 +1,8 @@
 @if (isDevMode) {
 <app-portfolio class="portfolio"></app-portfolio>
+}@else { @if(counter()>3){
+<app-portfolio class="portfolio"></app-portfolio>
 }@else {
 <app-under-development></app-under-development>
-}
+<div style="height: 100px; width: 100px" (click)="incrementCounter()">:</div>
+} }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, isDevMode } from '@angular/core';
+import { Component, isDevMode, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PortfolioComponent } from './core/components/portfolio/portfolio.component';
 import { UnderDevelopmentComponent } from './core/components/under-development/under-development.component';
@@ -27,4 +27,9 @@ import { ModeToggleService } from './features/mode-toggle/mode-toggle.service';
 })
 export class AppComponent {
   isDevMode = isDevMode();
+  counter = signal(0);
+
+  incrementCounter() {
+    this.counter.set(this.counter() + 1);
+  }
 }
