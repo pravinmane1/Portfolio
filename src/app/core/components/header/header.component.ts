@@ -21,8 +21,6 @@ export class HeaderComponent {
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event: any) {
     const newScrollY = event?.currentTarget?.scrollY;
-    console.log(newScrollY, 'Scroll Event');
-
     if (newScrollY && Math.abs(newScrollY - this.currentScrollY) > 10) {
       const scrolledTowardUp = newScrollY < this.currentScrollY;
       const headerCrossed = newScrollY > 100;
