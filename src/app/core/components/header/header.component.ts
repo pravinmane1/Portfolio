@@ -18,6 +18,8 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 export class HeaderComponent {
   private currentScrollY = 0;
   public isHeaderVisible = signal<boolean>(true);
+  public isMobileNavBarVisible = signal<boolean>(false);
+
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event: any) {
     const newScrollY = event?.currentTarget?.scrollY;
@@ -27,5 +29,9 @@ export class HeaderComponent {
       this.isHeaderVisible.set(!headerCrossed || scrolledTowardUp);
       this.currentScrollY = event.currentTarget.scrollY;
     }
+  }
+
+  initiateNavBarClose() {
+    this.isMobileNavBarVisible.set(!this.isMobileNavBarVisible());
   }
 }
