@@ -1,17 +1,28 @@
-<ul role="list" class="nav-bar">
-  <li>
-    <a href="#about" class="nav-link">About</a>
-  </li>
-  <li>
-    <a href="#experience" class="nav-link">Experience</a>
-  </li>
-  <li><a href="#work" class="nav-link">Work</a></li>
-  <li><a href="#contact" class="nav-link">Contact</a></li>
-  <li><a href="#resume" class="nav-link">Resume</a></li>
-</ul>
+<nav>
+  <ul
+    role="list"
+    class="nav-bar animate"
+    [ngClass]="{ 'move-left': moveNavRight(), 'fade-up': isLoading() }"
+  >
+    @for (navItem of navOptions(); track $index) {
+    <li [ngClass]="{ 'fade-up': isLoading() }">
+      <a [href]="navItem.href" class="nav-link" (click)="onCloseClicked()">{{
+        navItem.title
+      }}</a>
+    </li>
+    }
+    <li [ngClass]="{ 'fade-up': isLoading() }">
+      <a href="#resume" class="nav-link" (click)="onCloseClicked()">Resume</a>
+    </li>
+  </ul>
+</nav>
 
 @if (withCloseBtn) {
-<button class="close-btn" (click)="onCloseClicked()">
+<button
+  class="close-btn animate"
+  (click)="onCloseClicked()"
+  [ngClass]="{ 'move-left': moveNavRight(), 'fade-up': isLoading() }"
+>
   <svg
     viewBox="0 0 32 32"
     version="1.1"

@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { ModeToggleComponent } from '../../../features/mode-toggle/mode-toggle.component';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
@@ -15,10 +15,16 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading.set(false);
+    });
+  }
   private currentScrollY = 0;
   public isHeaderVisible = signal<boolean>(true);
   public isMobileNavBarVisible = signal<boolean>(false);
+  public isLoading = signal(true);
 
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event: any) {

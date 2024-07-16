@@ -2,7 +2,8 @@
   <div
     class="sticky-header"
     [ngClass]="{
-      'hide-header': !isHeaderVisible()
+      'hide-header': !isHeaderVisible(),
+      'fade-up': isLoading()
     }"
   >
     <div class="header-span">
