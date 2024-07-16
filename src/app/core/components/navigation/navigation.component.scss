@@ -23,7 +23,8 @@
   -webkit-text-fill-color: transparent;
 }
 
-li {
+li,
+.animate {
   transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
     transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -74,5 +75,9 @@ ul > li:nth-child(5) {
     display: flex;
     flex-flow: column;
     gap: 3rem;
+  }
+  .move-left {
+    opacity: 0.5;
+    transform: translateX(15rem);
   }
 }

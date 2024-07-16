@@ -1,5 +1,9 @@
 <nav>
-  <ul role="list" class="nav-bar">
+  <ul
+    role="list"
+    class="nav-bar animate"
+    [ngClass]="{ 'move-left': moveNavRight(), 'fade-up': isLoading() }"
+  >
     @for (navItem of navOptions(); track $index) {
     <li [ngClass]="{ 'fade-up': isLoading() }">
       <a [href]="navItem.href" class="nav-link" (click)="onCloseClicked()">{{
@@ -14,7 +18,11 @@
 </nav>
 
 @if (withCloseBtn) {
-<button class="close-btn" (click)="onCloseClicked()">
+<button
+  class="close-btn animate"
+  (click)="onCloseClicked()"
+  [ngClass]="{ 'move-left': moveNavRight(), 'fade-up': isLoading() }"
+>
   <svg
     viewBox="0 0 32 32"
     version="1.1"

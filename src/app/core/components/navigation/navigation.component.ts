@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 export class NavigationComponent implements OnInit {
   @Input() withCloseBtn: boolean = false;
   @Output() closeClicked = new EventEmitter();
+  public moveNavRight = signal(false);
   public isLoading = signal(true);
   public navOptions = signal([
     { href: '#about', title: 'About' },
@@ -28,12 +29,15 @@ export class NavigationComponent implements OnInit {
   ]);
 
   onCloseClicked() {
-    this.closeClicked.emit();
+    this.moveNavRight.set(true);
+    setTimeout(() => {
+      this.closeClicked.emit();
+    },300);
   }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.isLoading.set(false);
-    });
+    },100);
   }
 }
