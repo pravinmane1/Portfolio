@@ -15,8 +15,19 @@
   margin: 1rem;
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
 .hero-content {
   margin: 1rem;
+  animation: fade-in linear;
+  animation-timeline: scroll();
 }
 .title-statement {
   font-size: 2rem;
