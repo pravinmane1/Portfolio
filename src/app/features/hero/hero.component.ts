@@ -1,11 +1,18 @@
-import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Component, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, CommonModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
-export class HeroComponent {}
+export class HeroComponent implements OnInit {
+  public isLoading = signal(true);
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading.set(false);
+    });
+  }
+}

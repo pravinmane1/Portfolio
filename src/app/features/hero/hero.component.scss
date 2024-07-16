@@ -88,6 +88,33 @@
   gap: 1rem;
 }
 
+.animate {
+  transition: opacity 700ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 700ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.p1 {
+  transition-delay: 600ms !important;
+}
+
+.t1,
+.t2 {
+  transition-delay: 800ms !important;
+}
+
+.title-statement {
+  transition-delay: 900ms !important;
+}
+
+.hero-image {
+  transition-delay: 1000ms !important;
+}
+
+.fade-up {
+  opacity: 0.01;
+  transform: translateY(20px);
+}
+
 @media (max-width: 480px) {
   .name-holder {
     line-height: 3rem;
@@ -118,6 +145,7 @@
     height: 160px;
     width: 160px;
     margin-top: 4rem;
+    transition-delay: 500ms !important;
   }
 
   .title-statement {
