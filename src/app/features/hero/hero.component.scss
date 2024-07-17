@@ -29,10 +29,16 @@
   animation: fade-in linear;
   animation-timeline: scroll();
 }
+
 .title-statement {
   font-size: 2rem;
   font-weight: 500;
   max-width: 40rem;
+}
+
+.social-media-links {
+  display: block;
+  transition-delay: 1000ms !important;
 }
 
 .p1 {
