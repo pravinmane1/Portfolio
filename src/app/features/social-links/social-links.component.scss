@@ -1,0 +1,13 @@
+.social-media-list {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-media-list > li > a {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+}

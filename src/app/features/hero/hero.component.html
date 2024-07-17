@@ -1,21 +1,25 @@
 <section class="hero-section">
   <div class="hero-content">
-    <p class="p1 animate" [ngClass]="{ 'fade-up': isLoading() }">
+    <h1 class="p1 animate" [ngClass]="{ 'fade-up': isLoading() }">
       Hi, my name is
-    </p>
+    </h1>
     <span class="name-holder">
-      <span class="gradient t1 animate" [ngClass]="{ 'fade-up': isLoading() }"
-        >Pravin
-      </span>
-      <span class="gradient t2 animate" [ngClass]="{ 'fade-up': isLoading() }"
-        >Mane.
-      </span>
+      <h1 class="gradient t1 animate" [ngClass]="{ 'fade-up': isLoading() }">
+        Pravin
+      </h1>
+      <h1 class="gradient t2 animate" [ngClass]="{ 'fade-up': isLoading() }">
+        Mane.
+      </h1>
     </span>
     <p class="title-statement animate" [ngClass]="{ 'fade-up': isLoading() }">
       I am a full stack software engineer with a strong focus in front-end,
       currently working at
       <a href="https://www.slb.com" target="_blank">slb</a>.
     </p>
+    <app-social-links
+      class="social-media-links animate"
+      [ngClass]="{ 'fade-up': isLoading() }"
+    ></app-social-links>
   </div>
   <img
     ngSrc="/assets/profile_image.jpg"
