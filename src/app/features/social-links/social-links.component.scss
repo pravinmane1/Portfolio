@@ -1,13 +1,37 @@
 .social-media-list {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 2rem;
+  flex-flow: row wrap;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .social-media-list > li > a {
   display: flex;
   flex-flow: row nowrap;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  min-width: 6rem;
+  position: relative;
+  background: white;
+  text-decoration: none;
+}
+
+.social-media-list > li > a:hover {
+  text-decoration: underline;
+}
+
+.social-media-list > li > a:before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  transform: translate(10px, 8px);
+  z-index: -1;
+  background: conic-gradient(
+    from 28deg at 40% -25%,
+    rgba(159, 102, 211, 0),
+    rgb(121 130 255 / 42%)
+  );
+  filter: blur(10px);
 }
