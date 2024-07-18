@@ -32,8 +32,13 @@
 
 .title-statement {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   max-width: 40rem;
+}
+
+.job-title {
+  font-weight: 400;
+  color: darkblue;
 }
 
 .social-media-links {
@@ -128,7 +133,7 @@
 }
 
 .hero-image {
-  transition: box-shadow 900ms cubic-bezier(.22,.61,.36,1);
+  transition: box-shadow 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .hero-image:hover {
