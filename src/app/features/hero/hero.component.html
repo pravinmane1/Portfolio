@@ -21,13 +21,14 @@
       [ngClass]="{ 'fade-up': isLoading() }"
     ></app-social-links>
   </div>
-  <img
-    ngSrc="/assets/profile_image.jpg"
-    width="200"
-    height="200"
-    class="hero-image animate"
-    ngSrcset="100w, 200w, 300w"
-    priority
-    [ngClass]="{ 'fade-up': isLoading() }"
-  />
+  <div class="hero-image-holder animate" [ngClass]="{ 'fade-up': isLoading() }">
+    <img
+      ngSrc="/assets/profile_image.jpg"
+      width="200"
+      height="200"
+      class="hero-image"
+      ngSrcset="100w, 200w, 300w"
+      priority
+    />
+  </div>
 </section>

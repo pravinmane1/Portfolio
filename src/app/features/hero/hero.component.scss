@@ -123,8 +123,16 @@
   transition-delay: 900ms !important;
 }
 
-.hero-image {
+.hero-image-holder {
   transition-delay: 1000ms !important;
+}
+
+.hero-image {
+  transition: box-shadow 900ms cubic-bezier(.22,.61,.36,1);
+}
+
+.hero-image:hover {
+  box-shadow: #0000ff2e 10px 18px 20px 0px;
 }
 
 .fade-up {
