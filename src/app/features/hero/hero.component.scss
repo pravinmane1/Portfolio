@@ -32,8 +32,13 @@
 
 .title-statement {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   max-width: 40rem;
+}
+
+.job-title {
+  font-weight: 400;
+  color: darkblue;
 }
 
 .social-media-links {
@@ -123,8 +128,16 @@
   transition-delay: 900ms !important;
 }
 
-.hero-image {
+.hero-image-holder {
   transition-delay: 1000ms !important;
+}
+
+.hero-image {
+  transition: box-shadow 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-image:hover {
+  box-shadow: #0000ff2e 10px 18px 20px 0px;
 }
 
 .fade-up {

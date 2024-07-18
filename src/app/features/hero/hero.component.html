@@ -12,8 +12,8 @@
       </h1>
     </span>
     <p class="title-statement animate" [ngClass]="{ 'fade-up': isLoading() }">
-      I am a full stack software engineer with a strong focus in front-end,
-      currently working at
+      I am a <span class="job-title">full stack software engineer </span>with a strong focus in
+      front-end, currently working at
       <a href="https://www.slb.com" target="_blank">slb</a>.
     </p>
     <app-social-links
@@ -21,13 +21,14 @@
       [ngClass]="{ 'fade-up': isLoading() }"
     ></app-social-links>
   </div>
-  <img
-    ngSrc="/assets/profile_image.jpg"
-    width="200"
-    height="200"
-    class="hero-image animate"
-    ngSrcset="100w, 200w, 300w"
-    priority
-    [ngClass]="{ 'fade-up': isLoading() }"
-  />
+  <div class="hero-image-holder animate" [ngClass]="{ 'fade-up': isLoading() }">
+    <img
+      ngSrc="/assets/profile_image.jpg"
+      width="200"
+      height="200"
+      class="hero-image"
+      ngSrcset="100w, 200w, 300w"
+      priority
+    />
+  </div>
 </section>
