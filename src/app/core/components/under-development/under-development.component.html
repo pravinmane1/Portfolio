@@ -1,44 +1,43 @@
-
-  
-  <main class="main">
-    <div class="content">
-      <div class="left-side">
-        <h1>Hello, this is {{ title }}</h1>
-        <p class="progress">Still cooking 😁, Stay tuned...</p>
-      </div>
-      <div class="divider" role="separator" aria-label="Divider"></div>
-      <div class="right-side">
-        <div class="pill-group">
-          @for (item of [ { title: 'Connect with me on linkedIn', link:
-          'https://www.linkedin.com/in/pravinmane1' }, { title: 'Explore my
-          projects', link:
-          'https://www.linkedin.com/in/pravinmane1/details/projects' }, { title:
-          'This is my github', link: 'https://github.com/pravinmane1' }, ]; track
-          item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-            [ngStyle]="{ width: '90%' }"
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Hello, this is {{ title }}</h1>
+      <p class="progress">Still cooking 😁, Stay tuned...</p>
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="right-side">
+      <div class="pill-group">
+        @for (item of [ { name:'linkedIn',title: 'Connect with me on linkedIn',
+        link: 'https://www.linkedin.com/in/pravinmane1' }, {
+        name:'linkedIn_projects',title: 'Explore my projects', link:
+        'https://www.linkedin.com/in/pravinmane1/details/projects' },
+        {name:'gitHub', title: 'This is my GitHub', link:
+        'https://github.com/pravinmane1' }, ]; track item.title) {
+        <a
+          (click)="socialLinkClicked(item.name)"
+          class="pill"
+          [href]="item.link"
+          target="_blank"
+          rel="noopener"
+          [ngStyle]="{ width: '90%' }"
+        >
+          <span [ngStyle]="{ 'flex-grow': '1', 'text-align': 'center' }">{{
+            item.title
+          }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="14"
+            viewBox="0 -960 960 960"
+            width="14"
+            fill="currentColor"
           >
-            <span [ngStyle]="{ 'flex-grow': '1', 'text-align': 'center' }">{{
-              item.title
-            }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-          }
-        </div>
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+            />
+          </svg>
+        </a>
+        }
       </div>
     </div>
-  </main>
+  </div>
+</main>
