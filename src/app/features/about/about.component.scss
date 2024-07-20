@@ -8,7 +8,7 @@
   gap: 6rem;
   margin: 0 4rem;
   animation: fade-in linear;
-  // animation-timeline: view(500px);
+  // animation-timeline: view();
 }
 
 @keyframes fade-in {
@@ -23,10 +23,10 @@
 }
 
 .hero-image {
-  transform: rotate(-3deg);
+  transform: rotate(-8deg);
   border-radius: 2rem;
   min-width: 250px;
-  max-width: 250px;
+  max-height: 450px;
 }
 
 .about-text {
@@ -66,10 +66,10 @@ p {
 
 @media (max-width: 900px) {
   .hero-image {
-    min-width: 200px;
-    max-height: 200px;
-    height: 200px;
-    width: 200px;
+    min-width: 150px;
+    max-height: 270px;
+    height: 270px;
+    width: 150px;
   }
 
   .about-section {
@@ -83,6 +83,6 @@ p {
     flex-flow: column nowrap;
   }
   .hero-image {
-    order: 1;
+    transform: rotate(0deg);
   }
 }
