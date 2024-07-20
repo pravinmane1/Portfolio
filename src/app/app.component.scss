@@ -6,3 +6,26 @@
   margin-right: auto;
   max-width: 2000px;
 }
+
+.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  z-index: -1;
+  background: conic-gradient(
+    from 28deg at 40% -25%,
+    rgba(159, 102, 211, 0),
+    rgb(121 130 255 / 22%)
+  );
+  filter: blur(10px);
+  transform: translateY(20px);
+}

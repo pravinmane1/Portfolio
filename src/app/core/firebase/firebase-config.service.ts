@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Analytics, getAnalytics, logEvent } from 'firebase/analytics';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { firebaseConfig } from './firebase-config.const';
@@ -11,6 +11,9 @@ export class FirebaseConfigService {
   private app!: FirebaseApp;
   private analytics!: Analytics;
   constructor() {
+    if (isDevMode()) {
+      return;
+    }
     this.app = initializeApp(firebaseConfig);
     this.analytics = getAnalytics(this.app);
   }
@@ -19,6 +22,9 @@ export class FirebaseConfigService {
     eventType: ANALYTICS_EVENT_TYPE,
     eventParams?: { [key: string]: any }
   ) {
+    if (isDevMode()) {
+      return;
+    }
     if (eventParams) {
       logEvent(this.analytics, ANALYTICS_EVENT[eventType], eventParams);
     } else {
