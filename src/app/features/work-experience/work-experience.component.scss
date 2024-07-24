@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .experience-section {
   padding: 4rem 1rem;
   display: flex;
@@ -26,7 +28,7 @@
   gap: 4rem;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: rgba(100, 100, 111, 0.08) 1px 12px 29px 0px;
+  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
 }
 
 .experience-info {
@@ -53,8 +55,8 @@
     font-weight: 500;
     padding: 0.25rem 0.5rem;
     border-radius: 2rem;
-    background-color: #2d00f73b;
-    color: darkblue;
+    background-color: rgb(0 88 247 / 18%);
+    color: $clr-primary-500;
   }
 }
 
@@ -62,21 +64,11 @@
   max-width: 600px;
 }
 
-.experience-title {
-  font-size: 2rem;
-  font-weight: 500;
-  text-decoration: underline;
-  background: linear-gradient(#2d00f7, #1500ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 p {
   font-size: 1rem;
 
   span {
-    color: darkblue;
+    color: $clr-primary-500;
     font-size: 1.0625rem; //625
   }
 }
@@ -87,7 +79,7 @@ p {
 }
 
 .hyperlink:hover {
-  text-decoration-color: darkblue;
+  text-decoration-color: $clr-primary-500;
 }
 
 @media (max-width: 900px) {

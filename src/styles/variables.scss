@@ -2,32 +2,46 @@
 @mixin lighten() {
   --clr-primary-200: #add8e6;
   --clr-primary-400: #2da9e5;
-  --clr-primary-450: #3f6987;
-  --clr-primary-500: #0159a1;
+  --clr-primary-450: #2d00f7;
+  --clr-primary-500: #00008b;
 
-  --clr-secondary-400: #018940;
+  --clr-secondary-400: #d100d1;
+  --clr-secondary-500: #a100f2;
+  --clr-secondary-600: #6100ff;
 
-  --clr-neutral-100: hsl(100, 100%, 100%);
-  --clr-neutral-150: hsl(0, 0%, 91%);
-  --clr-neutral-200: hsla(0, 17%, 83%, 0.612);
-  --clr-neutral-250: hsl(0, 0%, 50%);
-  --clr-neutral-300: hsla(0, 0%, 31%, 0.431);
-  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-150: #e8e8e8;
+  --clr-neutral-200: #dbcccc;
+  --clr-neutral-250: #808080;
+  --clr-neutral-300: #4f4f4f;
+  --clr-neutral-900: #000000;
+
+  --clr-header-shadow: rgb(0 0 0 / 3%);
+  --clr-card-shadow: rgb(100 100 111 / 8%);
+
+  --clr-bg: white;
 }
 
 // mixin that enables css variables in dark mode
 @mixin darken() {
   --clr-primary-200: #042732;
   --clr-primary-400: #2da9e5;
-  --clr-primary-450: #3f6987;
-  --clr-primary-500: #0159a1;
+  --clr-primary-450: #2d00f7;
+  --clr-primary-500: #ffffff;
 
-  --clr-secondary-400: #018940;
+  --clr-secondary-400: #d100d1;
+  --clr-secondary-500: #a100f2;
+  --clr-secondary-600: #ffffff;
 
-  --clr-neutral-100: hsl(0, 0%, 0%);
-  --clr-neutral-150: hsl(0, 0%, 91%);
-  --clr-neutral-200: hsla(0, 17%, 83%, 0.612);
-  --clr-neutral-250: hsl(0, 0%, 50%);
-  --clr-neutral-300: hsla(0, 0%, 31%, 0.431);
-  --clr-neutral-900: hsl(100, 100%, 100%);
+  --clr-neutral-100: #000000;
+  --clr-neutral-150: #4f4f4f;
+  --clr-neutral-200: #808080;
+  --clr-neutral-250: #dbcccc;
+  --clr-neutral-300: #e8e8e8;
+  --clr-neutral-900: #ffffff;
+
+  --clr-header-shadow: rgba(255, 255, 255, 0.03);
+  --clr-card-shadow: rgba(255, 255, 255, 0.08);
+
+  --clr-bg: rgb(53, 53, 53);
 }

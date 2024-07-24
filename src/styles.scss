@@ -13,6 +13,8 @@ $clr-primary-450: var(--clr-primary-450);
 $clr-primary-500: var(--clr-primary-500);
 
 $clr-secondary-400: var(--clr-secondary-400);
+$clr-secondary-500: var(--clr-secondary-500);
+$clr-secondary-600: var(--clr-secondary-600);
 
 $clr-neutral-100: var(--clr-neutral-100);
 $clr-neutral-150: var(--clr-neutral-150);
@@ -21,10 +23,14 @@ $clr-neutral-250: var(--clr-neutral-250);
 $clr-neutral-300: var(--clr-neutral-300);
 $clr-neutral-900: var(--clr-neutral-900);
 
+$clr-header-shadow: var(--clr-header-shadow);
+$clr-card-shadow: var(--clr-card-shadow);
+$clr-bg: var(--clr-bg);
+
 $ff-primary: "Montserrat", sans-serif;
 
 body {
-  background-color: $clr-neutral-100;
+  background-color: $clr-bg;
   color: $clr-neutral-900;
 }
 
@@ -111,6 +117,10 @@ svg {
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  transition: all 500ms ease-in-out;
+}
 /* Added custom scrollbar */
 /* width */
 ::-webkit-scrollbar {
@@ -119,17 +129,17 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $clr-neutral-150;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: $clr-neutral-250;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: $clr-neutral-300;
 }
 
 .noselect {
@@ -214,4 +224,14 @@ html {
 }
 .fs-500 {
   font-size: $fs-500;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: underline;
+  background: linear-gradient($clr-primary-500, $clr-secondary-600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

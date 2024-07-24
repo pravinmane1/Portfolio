@@ -17,10 +17,7 @@
 
 .nav-link:hover {
   text-decoration: underline;
-  background: linear-gradient(#2d00f7, #1500ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $clr-primary-500;
 }
 
 li,

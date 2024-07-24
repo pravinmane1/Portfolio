@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .project-section {
   min-height: 100vh;
   padding: 4rem 1rem;
@@ -19,28 +21,21 @@
 .project-img {
   height: 100px;
   width: 150px;
+  min-height: 100px;
+  min-width: 150px;
   object-fit: contain;
 }
 
 .project-card {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   gap: 4rem;
   padding: 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: unset;
   text-decoration: unset;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 500;
-  text-decoration: underline;
-  background: linear-gradient(#2d00f7, #1500ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  transition: box-shadow 300ms ease-out;
 }
 
 .project-title {
@@ -58,7 +53,7 @@
 }
 
 .project-card:hover {
-  box-shadow: rgb(100 100 111 / 8%) 1px 12px 29px 0px;
+  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
 }
 
 .tech-list {
@@ -71,8 +66,8 @@
     font-weight: 500;
     padding: 0.25rem 0.5rem;
     border-radius: 2rem;
-    background-color: #2d00f73b;
-    color: darkblue;
+    background-color: rgb(0 88 247 / 18%);
+    color: $clr-primary-500;
   }
 }
 
