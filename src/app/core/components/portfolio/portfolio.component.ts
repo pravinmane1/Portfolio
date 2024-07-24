@@ -4,6 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { HeroComponent } from '../../../features/hero/hero.component';
 import { AboutComponent } from '../../../features/about/about.component';
 import { WorkExperienceComponent } from '../../../features/work-experience/work-experience.component';
+import { ProjectsComponent } from '../../../features/projects/projects.component';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,6 +15,7 @@ import { WorkExperienceComponent } from '../../../features/work-experience/work-
     HeroComponent,
     AboutComponent,
     WorkExperienceComponent,
+    ProjectsComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
