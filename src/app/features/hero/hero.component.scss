@@ -40,7 +40,7 @@
 
 .job-title {
   font-weight: 400;
-  color: darkblue;
+  color: $clr-primary-500;
 }
 
 .social-media-links {
@@ -51,7 +51,7 @@
 .p1 {
   font-weight: 500;
   font-size: 1.25rem;
-  color: #0202ab;
+  color: $clr-primary-500;
   letter-spacing: 0.05em;
 }
 
@@ -64,11 +64,21 @@
 }
 
 .t1 {
-  background-image: linear-gradient(to bottom right, #d100d1, #a100f2, #2d00f7);
+  background-image: linear-gradient(
+    to bottom right,
+    $clr-secondary-400,
+    $clr-secondary-500,
+    $clr-primary-450
+  );
 }
 
 .t2 {
-  background-image: linear-gradient(to bottom right, #a100f2, #2d00f7, #d100d1);
+  background-image: linear-gradient(
+    to bottom right,
+    $clr-secondary-500,
+    $clr-primary-450,
+    $clr-secondary-400
+  );
 }
 .gradient::before {
   color: $clr-neutral-900;

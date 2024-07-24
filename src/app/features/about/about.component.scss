@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .about-section {
   padding: 4rem 1rem;
   display: flex;
@@ -33,15 +35,8 @@
   max-width: 600px;
 }
 
-.about-title {
-  font-size: 2rem;
+.section-title {
   margin-bottom: 2rem;
-  font-weight: 500;
-  text-decoration: underline;
-  background: linear-gradient(#2d00f7, #1500ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 p {
@@ -50,7 +45,7 @@ p {
   line-height: 1.5rem;
 
   span {
-    color: darkblue;
+    color: $clr-primary-500;
     font-size: 1.0625rem; //625
   }
 }
@@ -61,7 +56,7 @@ p {
 }
 
 .hyperlink:hover {
-  text-decoration-color: darkblue;
+  text-decoration-color: $clr-primary-500;
 }
 
 @media (max-width: 900px) {

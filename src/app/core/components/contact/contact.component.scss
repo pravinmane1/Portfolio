@@ -25,15 +25,6 @@
 .contact-card {
   max-width: 30rem;
 }
-.contact-title {
-  font-size: 2rem;
-  font-weight: 500;
-  text-decoration: underline;
-  background: linear-gradient(#2d00f7, #1500ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 @media (max-width: 900px) {
   .contact-section {
