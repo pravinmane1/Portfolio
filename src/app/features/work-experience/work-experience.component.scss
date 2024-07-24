@@ -24,16 +24,13 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 4rem;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.08) 1px 12px 29px 0px;
 }
 
-// .experience-card:hover {
-//   box-shadow: rgb(100 100 111 / 8%) 1px 12px 29px 0px;
-// }
-
 .experience-info {
-  max-width: 30rem;
+  max-width: 40rem;
 }
 
 .role-title {
@@ -43,7 +40,7 @@
 }
 
 .role-description {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tech-list {

@@ -40,5 +40,36 @@ export class ProjectsComponent {
         'https://media.licdn.com/dms/image/D4D2DAQFSbZa5J2X1Ew/profile-treasury-image-shrink_160_160/0/1706283998133?e=1722398400&v=beta&t=xVP8Iolp7lIorNilxksndeQad-P8bq2u-8uvZJ_FCYY',
       live: 'https://pravinmane1.github.io/login-card-challenge/',
     },
+
+    {
+      title: 'Book Store App',
+      description:
+        'This is a online book store app implementation using firebase. That includes Google signIn, Phone Number verification, Cart, Books listing of different courses, wishlist, profile, order management.',
+      techList: ['Android', 'Java', 'Firebase'],
+      github: 'https://github.com/pravinmane1/Bookambo-Online-book-store',
+      screenshot:
+        'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/android-app-icon.png',
+      live: 'https://github.com/pravinmane1/Bookambo-Online-book-store',
+    },
+    {
+      title: 'Online Car Renting Android App',
+      description:
+        'A car renting application made using firebase. User can book and rent a car using this app. This app has google sign in, email sign in, Virtual wallet, Cars listing and admin dashboard to manage the cars listing and to manage bookings.',
+      techList: ['Android', 'Java', 'Firebase'],
+      github: 'https://github.com/pravinmane1/Safar-Car-Renting-Online-App',
+      screenshot:
+        'https://www.nevinainfotech.com/new-ni-images/services_pages_img/android-app-development-img.svg',
+      live: 'https://github.com/pravinmane1/Safar-Car-Renting-Online-App',
+    },
+    {
+      title: 'Attendance Android App',
+      description:
+        'Attendance app for teacher to track attendance of different classes by adding timetable and attendance of the student.',
+      techList: ['Android', 'Java', 'XML', 'Firebase'],
+      github: 'https://github.com/pravinmane1/AttendanceApp',
+      screenshot:
+        'https://www.radicallogix.com/assets/img/student-attendance-features.png',
+      live: 'https://github.com/pravinmane1/AttendanceApp/',
+    },
   ];
 }
