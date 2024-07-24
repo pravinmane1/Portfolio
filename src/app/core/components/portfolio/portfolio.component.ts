@@ -5,6 +5,7 @@ import { HeroComponent } from '../../../features/hero/hero.component';
 import { AboutComponent } from '../../../features/about/about.component';
 import { WorkExperienceComponent } from '../../../features/work-experience/work-experience.component';
 import { ProjectsComponent } from '../../../features/projects/projects.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,7 +16,8 @@ import { ProjectsComponent } from '../../../features/projects/projects.component
     HeroComponent,
     AboutComponent,
     WorkExperienceComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent,
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
