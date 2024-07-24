@@ -19,13 +19,14 @@
 .project-img {
   height: 100px;
   width: 150px;
+  object-fit: contain;
 }
 
 .project-card {
   display: flex;
   flex-flow: row wrap;
   gap: 4rem;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: unset;
@@ -53,7 +54,7 @@
 }
 
 .project-info {
-  max-width: 30rem;
+  max-width: 40rem;
 }
 
 .project-card:hover {
