@@ -1,0 +1,12 @@
+.contact-section {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 4rem;
+  margin: 0 4rem;
+  animation: fade-in linear;
+  justify-content: center;
+  // animation-timeline: view();
+}
