@@ -1,4 +1,29 @@
 <section id="projects" class="project-section">
-
-    
+  <h1 class="section-title">Projects</h1>
+  <div class="projects">
+    @for (project of projects; track $index) {
+    <a class="project-card" [href]="project.live" target="_blank">
+      <div>
+        <img
+          [ngSrc]="project.screenshot"
+          alt="project-screenshot"
+          height="100"
+          width="150"
+          class="project-img"
+        />
+      </div>
+      <div class="project-info">
+        <div class="project-title">{{ project.title }}</div>
+        <div class="project-description">
+          {{ project.description }}
+        </div>
+        <ul role="list" class="tech-list">
+          @for (tech of project.techList; track $index) {
+          <li>{{ tech }}</li>
+          }
+        </ul>
+      </div>
+    </a>
+    }
+  </div>
 </section>
