@@ -18,7 +18,11 @@
 }
 
 .contact-information {
-  background: linear-gradient(120deg, $clr-secondary-300 0%, $clr-primary-400 100%);
+  background: linear-gradient(
+    120deg,
+    $clr-secondary-300 0%,
+    $clr-primary-400 100%
+  );
   color: white;
   padding: 2rem 4rem;
   display: flex;
@@ -60,6 +64,7 @@
 
 .contact-form {
   background: white;
+  min-width: 30rem;
   padding: 20px 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -102,6 +107,22 @@
   background: $clr-secondary-500;
 }
 
+.contact-form button:disabled {
+  opacity: 0.5;
+  background: $clr-secondary-300;
+  cursor: default;
+}
+
+.error-container {
+  margin-top: -1rem;
+  margin-bottom: 0.25rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.75rem;
+}
+
 @media (max-width: 900px) {
   .contact-section {
     gap: 2rem;
@@ -129,5 +150,9 @@
 
   .card-container {
     gap: 1rem;
+  }
+
+  .contact-form {
+    min-width: auto;
   }
 }

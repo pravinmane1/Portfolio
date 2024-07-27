@@ -5,20 +5,55 @@
       <div class="send-message">
         <div class="contact-form">
           <h2>Contact me</h2>
-          <form>
-            <input type="text" name="name" placeholder="Your Name" required />
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="Your Name"
+              required
+            />
+            <div
+              *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+              class="error-container"
+            >
+              <small *ngIf="name?.errors?.['required']" class="error"
+                >Name is required.</small
+              >
+            </div>
+
             <input
               type="email"
-              name="email"
+              formControlName="email"
               placeholder="Your Email"
               required
             />
+            <div
+              *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+              class="error-container"
+            >
+              <small *ngIf="email?.errors?.['required']" class="error"
+                >Email is required.</small
+              >
+              <small *ngIf="email?.errors?.['email']" class="error"
+                >Enter a valid email.</small
+              >
+            </div>
+
             <textarea
-              name="message"
+              formControlName="message"
               placeholder="Your Message"
               required
             ></textarea>
-            <button type="submit">Send</button>
+            <div
+              *ngIf="message?.invalid && (message?.dirty || message?.touched)"
+              class="error-container"
+            >
+              <small *ngIf="message?.errors?.['required']" class="error"
+                >Message is required.</small
+              >
+            </div>
+
+            <button type="submit" [disabled]="contactForm.invalid">Send</button>
           </form>
         </div>
       </div>
