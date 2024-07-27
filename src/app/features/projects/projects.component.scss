@@ -8,8 +8,19 @@
   align-items: center;
   gap: 4rem;
   margin: 0 4rem;
-  animation: fade-in linear;
-  // animation-timeline: view();
+  animation: fade-in ease-in-out;
+  animation-timeline: view();
+  animation-range-start: -30%;
+  animation-range-end: contain;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .projects {
