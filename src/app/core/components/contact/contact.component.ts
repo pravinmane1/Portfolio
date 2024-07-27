@@ -8,6 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ToasterService } from '../toaster/toaster.service';
+import { catchError, finalize, of } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -23,8 +25,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  isSending = false;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient,
+    private toasterService: ToasterService
+  ) {
     this.contactForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -42,9 +48,32 @@ export class ContactComponent {
       const email = this.contactForm.value.email;
       const message = this.contactForm.value.message;
       const url = `https://formspree.io/f/mzzpegwv`;
-      this.httpClient.post(url, { name, email, message }).subscribe(() => {
-        console.log('success');
-      });
+      this.isSending = true;
+      this.httpClient
+        .post(url, { name, email, message })
+        .pipe(
+          finalize(() => {
+            this.isSending = false;
+          }),
+          catchError(() => {
+            return of(null);
+          })
+        )
+        .subscribe((res) => {
+          if (res) {
+            this.toasterService.toasterMessage$.next({
+              message:
+                'Your message has been received successfully, I will try my best to respond as soon as possible',
+              isSuccess: true,
+            });
+          } else {
+            this.toasterService.toasterMessage$.next({
+              message:
+                'Failure in sending your message, Please check if all of the provided information is correct and try again',
+              isSuccess: false,
+            });
+          }
+        });
     }
   }
 
