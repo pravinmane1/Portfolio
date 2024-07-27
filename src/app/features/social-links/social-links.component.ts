@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FirebaseConfigService } from '../../core/firebase/firebase-config.service';
 import { ANALYTICS_EVENT_TYPE } from '../../core/firebase/event-list.const';
 
@@ -11,6 +11,8 @@ import { ANALYTICS_EVENT_TYPE } from '../../core/firebase/event-list.const';
   styleUrl: './social-links.component.scss',
 })
 export class SocialLinksComponent {
+
+  @Input() onlyIcons!: boolean;
   constructor(private firebaseService: FirebaseConfigService) {}
 
   public socialLinkClicked(name: string) {
