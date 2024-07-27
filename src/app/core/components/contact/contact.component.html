@@ -1,9 +1,59 @@
 <section id="contact" class="contact-section">
   <h1 class="section-title">Get in touch!</h1>
   <div class="contact-card">
-    If you have any queries or simply want to reach out, I'll do my best to get
-    back to you as soon as possible!
+    <div class="card-container">
+      <div class="send-message">
+        <div class="contact-form">
+          <h2>Contact me</h2>
+          <form>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="contact-information">
+        <p class="contact-title">Contact Information</p>
+        <div class="contact-items">
+          <a href="https://www.google.com/maps/place/Pune" target="_blank">
+            <img
+              ngSrc="/assets/contact-icons/location.png"
+              height="20"
+              width="20"
+            />
+            <span class="contact-item">Pune, India</span>
+          </a>
 
-    <app-social-links></app-social-links>
+          <a href="tel:+91 7057065515" target="_blank">
+            <img
+              ngSrc="/assets/contact-icons/phone.png"
+              height="20"
+              width="20"
+            />
+            <span class="contact-item">+91 7057065515</span>
+          </a>
+
+          <a href="mailto:manepravin11122@gmail.com" target="_blank">
+            <img
+              ngSrc="/assets/contact-icons/email.png"
+              height="20"
+              width="20"
+            />
+            <span class="contact-item">manepravin11122&#64;gmail.com</span>
+          </a>
+        </div>
+        <app-social-links [onlyIcons]="true"></app-social-links>
+      </div>
+    </div>
   </div>
 </section>

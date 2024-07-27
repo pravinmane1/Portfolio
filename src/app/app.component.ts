@@ -10,6 +10,7 @@ import {
 import { ModeToggleService } from './features/mode-toggle/mode-toggle.service';
 import { FirebaseConfigService } from './core/firebase/firebase-config.service';
 import { ANALYTICS_EVENT_TYPE } from './core/firebase/event-list.const';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { ANALYTICS_EVENT_TYPE } from './core/firebase/event-list.const';
   ],
   providers: [
     ModeToggleService,
+    ReactiveFormsModule,
     { provide: MODE_STORAGE_SERVICE, useClass: ModeLocalStorageService },
   ],
   templateUrl: './app.component.html',

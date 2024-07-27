@@ -5,6 +5,7 @@
       href="https://www.linkedin.com/in/pravinmane1"
       target="_blank"
       (click)="socialLinkClicked('linkedIn')"
+      [ngStyle]="{ minWidth: onlyIcons ? 'auto' : '6rem' }"
     >
       <span class="social-icon">
         <svg
@@ -23,7 +24,7 @@
           ></path>
         </svg>
       </span>
-      <span>LinkedIn</span></a
+      @if (!onlyIcons) {<span>LinkedIn</span>}</a
     >
   </li>
   <li class="list-item">
@@ -31,6 +32,7 @@
       href="https://github.com/pravinmane1"
       target="_blank"
       (click)="socialLinkClicked('gitHub')"
+      [ngStyle]="{ minWidth: onlyIcons ? 'auto' : '6rem' }"
     >
       <span class="social-icon">
         <svg
@@ -51,14 +53,15 @@
           ></path>
         </svg>
       </span>
-      <span>GitHub</span></a
-    >
+      @if (!onlyIcons) {<span>GitHub</span>}
+    </a>
   </li>
   <li class="list-item">
     <a
       href="https://x.com/pravin_mane1"
       target="_blank"
       (click)="socialLinkClicked('X')"
+      [ngStyle]="{ minWidth: onlyIcons ? 'auto' : '6rem' }"
     >
       <span class="social-icon">
         <svg
@@ -77,7 +80,7 @@
           ></path>
         </svg>
       </span>
-      <span> X</span></a
+      @if (!onlyIcons) {<span> X</span>}</a
     >
   </li>
 </ul>

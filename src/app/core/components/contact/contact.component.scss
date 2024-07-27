@@ -1,3 +1,5 @@
+@import "../../../../styles.scss";
+
 .contact-section {
   min-height: 100vh;
   padding: 4rem 1rem;
@@ -6,30 +8,108 @@
   align-items: center;
   gap: 4rem;
   margin: 0 4rem;
-  animation: fade-in linear;
   justify-content: center;
-  // animation-timeline: view();
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-    scale: 0.5;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
+.card-container {
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
 }
 
-.contact-card {
-  max-width: 30rem;
+.contact-information {
+  background: linear-gradient(120deg, $clr-secondary-300 0%, $clr-primary-400 100%);
+  color: white;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.contact-items {
+  flex-flow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.send-message {
+  flex-grow: 1;
+  padding: 2rem 4rem;
+  background: rgb(128 128 128 / 10%);
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 2rem 0;
+}
+
+.contact-items > a {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: unset;
+  text-decoration: unset;
+}
+
+.contact-description {
+  margin-bottom: 4rem;
+}
+
+.contact-form {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+}
+.contact-form textarea {
+  resize: vertical;
+  height: 150px;
+}
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  background: $clr-secondary-300;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: $clr-secondary-500;
 }
 
 @media (max-width: 900px) {
   .contact-section {
     gap: 2rem;
     margin: 0 2rem;
+  }
+
+  .card-container {
+    flex-flow: column nowrap;
   }
 }
 
@@ -41,5 +121,13 @@
 
   .contact-section {
     margin: 0;
+  }
+
+  .send-message {
+    padding: 0;
+  }
+
+  .card-container {
+    gap: 1rem;
   }
 }
