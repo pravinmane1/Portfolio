@@ -76,6 +76,7 @@ p {
 @media (max-width: 480px) {
   .about-section {
     flex-flow: column nowrap;
+    animation-range-start: -50%;
   }
   .hero-image {
     transform: rotate(0deg);

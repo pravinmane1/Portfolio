@@ -7,7 +7,6 @@
   flex-flow: column nowrap;
   align-items: center;
   gap: 4rem;
-  margin: 0 4rem;
   justify-content: center;
   animation: fade-in ease-in-out;
   animation-timeline: view();
@@ -26,7 +25,9 @@
 
 .card-container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 4rem;
   box-shadow: $clr-card-shadow 1px 12px 29px 0px;
 }
 
@@ -37,10 +38,13 @@
     $clr-primary-400 100%
   );
   color: white;
-  padding: 2rem 4rem;
+  min-width: 20rem;
+  padding: 1rem;
+  padding-left: 2rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
+  flex-grow: 1;
 }
 
 .contact-items {
@@ -51,6 +55,8 @@
 }
 
 .send-message {
+  display: flex;
+  justify-content: center;
   flex-grow: 1;
   padding: 2rem 4rem;
   background: rgb(128 128 128 / 10%);
@@ -58,7 +64,7 @@
 
 .contact-title {
   font-size: 1.5rem;
-  margin: 1rem 1rem 2rem 0;
+  margin: 1rem 0rem 2rem;
 }
 
 .contact-items > a {
@@ -136,6 +142,10 @@
   font-size: 0.75rem;
 }
 
+.contact-item {
+  line-break: anywhere;
+}
+
 @media (max-width: 900px) {
   .contact-section {
     gap: 2rem;
@@ -144,6 +154,11 @@
 
   .card-container {
     flex-flow: column nowrap;
+    margin: 0;
+  }
+
+  .send-message {
+    padding: 1rem;
   }
 }
 
@@ -155,6 +170,7 @@
 
   .contact-section {
     margin: 0;
+    animation-range-start: -50%;
   }
 
   .send-message {
@@ -163,9 +179,18 @@
 
   .card-container {
     gap: 1rem;
+    margin: 0;
   }
 
   .contact-form {
     min-width: auto;
+  }
+
+  .contact-information {
+    padding: 2rem;
+  }
+
+  .contact-items > a {
+    flex-flow: column nowrap;
   }
 }
