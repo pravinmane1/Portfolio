@@ -60,3 +60,9 @@
   );
   filter: blur(10px);
 }
+
+@media (max-width: 480px) {
+  .centered-icons {
+    justify-content: space-around;
+  }
+}
