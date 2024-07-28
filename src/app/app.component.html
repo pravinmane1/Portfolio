@@ -1,11 +1,3 @@
-@if (isDevMode) {
 <app-portfolio class="portfolio"></app-portfolio>
-}@else { @if(counter()>0){
-<app-portfolio class="portfolio"></app-portfolio>
-}@else {
-<app-under-development></app-under-development>
-<div style="height: 100px; width: 100px" (click)="incrementCounter()">:</div>
-} }
-
 <div class="bg"></div>
 <app-toaster></app-toaster>

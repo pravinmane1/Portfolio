@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class ToasterComponent implements OnInit, OnDestroy {
   isVisible = false;
   isSuccess = false;
+  isLoading = true;
   message = '';
   messageSubscription!: Subscription;
 
@@ -32,16 +33,25 @@ export class ToasterComponent implements OnInit, OnDestroy {
     this.message = message || '';
     this.isSuccess = isSuccess;
     this.isVisible = true;
+    this.isLoading = true;
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 300);
 
     if (this.isSuccess) {
       setTimeout(() => {
-        this.message = '';
-        this.isVisible = false;
+        this.onCloseClicked();
       }, 15000);
     }
   }
 
   onCloseClicked() {
-    this.isVisible = false;
+    this.isLoading = true;
+    setTimeout(() => {
+      this.message = '';
+      this.isVisible = false;
+      this.isLoading = false;
+    }, 300);
   }
 }
