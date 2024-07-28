@@ -41,9 +41,7 @@ export class ToasterComponent implements OnInit, OnDestroy {
 
     if (this.isSuccess) {
       setTimeout(() => {
-        this.message = '';
-        this.isVisible = false;
-        this.isLoading = false;
+        this.onCloseClicked();
       }, 15000);
     }
   }
@@ -51,6 +49,7 @@ export class ToasterComponent implements OnInit, OnDestroy {
   onCloseClicked() {
     this.isLoading = true;
     setTimeout(() => {
+      this.message = '';
       this.isVisible = false;
       this.isLoading = false;
     }, 300);
