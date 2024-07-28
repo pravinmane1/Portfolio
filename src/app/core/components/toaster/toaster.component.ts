@@ -19,7 +19,9 @@ export class ToasterComponent implements OnInit, OnDestroy {
 
   constructor(private toasterService: ToasterService) {}
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    if (this.messageSubscription) {
+      this.messageSubscription.unsubscribe();
+    }
   }
   ngOnInit(): void {
     this.messageSubscription = this.toasterService.toasterMessage$.subscribe(
@@ -42,7 +44,7 @@ export class ToasterComponent implements OnInit, OnDestroy {
     if (this.isSuccess) {
       setTimeout(() => {
         this.onCloseClicked();
-      }, 15000);
+      }, 5000);
     }
   }
 

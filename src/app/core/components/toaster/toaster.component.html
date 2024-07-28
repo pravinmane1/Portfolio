@@ -3,7 +3,9 @@
   class="toaster animate"
   [ngClass]="{ success: isSuccess, error: !isSuccess, 'fade-up': isLoading }"
 >
-  <p class="message">{{ message }}</p>
+  <div class="message-container">
+    <p class="message">{{ message }}</p>
+  </div>
   <button class="close-btn" (click)="onCloseClicked()">
     <svg
       viewBox="0 0 32 32"
