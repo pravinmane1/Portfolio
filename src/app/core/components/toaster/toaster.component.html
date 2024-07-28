@@ -1,5 +1,8 @@
 @if (isVisible) {
-<div class="toaster" [ngClass]="{ success: isSuccess, error: !isSuccess }">
+<div
+  class="toaster animate"
+  [ngClass]="{ success: isSuccess, error: !isSuccess, 'fade-up': isLoading }"
+>
   <p class="message">{{ message }}</p>
   <button class="close-btn" (click)="onCloseClicked()">
     <svg
