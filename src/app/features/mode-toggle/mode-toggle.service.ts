@@ -60,7 +60,7 @@ export class ModeToggleService {
     const deviceMode = window.matchMedia('(prefers-color-scheme: dark)');
     let initMode = this.modeStorage.get();
     if (!initMode) {
-      deviceMode.matches ? (initMode = Mode.DARK) : (initMode = Mode.LIGHT);
+      initMode = deviceMode.matches ? Mode.DARK : Mode.LIGHT;
     }
     this.updateCurrentMode(initMode);
     this.document.body.classList.add(this.currentMode);

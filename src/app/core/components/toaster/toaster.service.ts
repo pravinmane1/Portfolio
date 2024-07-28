@@ -5,7 +5,6 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ToasterService {
-  constructor() {}
 
   toasterMessage$ = new Subject<{ message: string; isSuccess: boolean }>();
 }

@@ -27,6 +27,13 @@
     }
   </div>
   @if (projects.length>visibleProjects.length) {
-  <div class="more" (click)="showMoreProjects()">more...</div>
+  <div
+    class="more"
+    (click)="showMoreProjects()"
+    (keypress)="showMoreProjects()"
+    tabindex="0"
+  >
+    more...
+  </div>
   }
 </section>
