@@ -1,7 +1,7 @@
 <section id="projects" class="project-section">
   <h1 class="section-title">Projects</h1>
   <div class="projects">
-    @for (project of projects; track $index) {
+    @for (project of visibleProjects; track $index) {
     <a class="project-card" [href]="project.live" target="_blank">
       <div>
         <img
@@ -26,4 +26,7 @@
     </a>
     }
   </div>
+  @if (projects.length>visibleProjects.length) {
+  <div class="more" (click)="showMoreProjects()">more...</div>
+  }
 </section>

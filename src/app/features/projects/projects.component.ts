@@ -72,4 +72,15 @@ export class ProjectsComponent {
       live: 'https://github.com/pravinmane1/AttendanceApp/',
     },
   ];
+
+  public visibleProjects = this.projects.slice(0, 3);
+
+  showMoreProjects() {
+    if (this.visibleProjects.length < this.projects.length) {
+      this.visibleProjects = this.projects.slice(
+        0,
+        this.visibleProjects.length + 3
+      );
+    }
+  }
 }
