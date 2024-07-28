@@ -1,27 +1,41 @@
 # Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+<h1 align="center">
+  Live URL - https://www.pravinmane.com
+</h1>
 
-## Development server
+![image](https://github.com/user-attachments/assets/eca26b0e-79d9-41f1-a09a-edeb16e1f207)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🛠 Installation & Set Up
 
-## Code scaffolding
+1. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```sh
+   nvm install
+   ```
 
-## Build
+2. Install dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```sh
+   npm install
+   ```
 
-## Running unit tests
+3. Start the development server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```sh
+   npm start
+   ```
 
-## Running end-to-end tests
+## 🚀 Building and Running for Production
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Generate a full static production build
 
-## Further help
+   ```sh
+   npm run build
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Run production build on local
+
+   ```sh
+   npm run watch
+   ```
