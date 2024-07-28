@@ -11,10 +11,10 @@ import { Subscription } from 'rxjs';
   styleUrl: './toaster.component.scss',
 })
 export class ToasterComponent implements OnInit, OnDestroy {
-  isVisible = true;
+  isVisible = false;
   isSuccess = false;
-  isLoading = false;
-  message = 'Failure in sending your message, Please check if all of the provided information is correct and try again';
+  isLoading = true;
+  message = '';
   messageSubscription!: Subscription;
 
   constructor(private toasterService: ToasterService) {}
