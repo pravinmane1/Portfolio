@@ -25,6 +25,7 @@
 
 @if (withCloseBtn) {
 <button
+  aria-label="Close Navigation"
   class="close-btn animate"
   (click)="onCloseClicked()"
   [ngClass]="{ 'move-left': moveNavRight(), 'fade-up': isLoading() }"
