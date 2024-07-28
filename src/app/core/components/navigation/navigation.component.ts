@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent implements OnInit {
-  @Input() withCloseBtn: boolean = false;
+  @Input() withCloseBtn = false;
   @Output() closeClicked = new EventEmitter();
   public moveNavRight = signal(false);
   public isLoading = signal(true);

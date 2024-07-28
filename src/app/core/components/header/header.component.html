@@ -26,6 +26,9 @@
       priority
       class="only-mobile-visible mobile-nav-icon"
       (click)="isMobileNavBarVisible.set(!isMobileNavBarVisible())"
+      (keydown)="isMobileNavBarVisible.set(!isMobileNavBarVisible())"
+      alt="navigation menu"
+      tabindex="0"
     />
   </div>
 </header>

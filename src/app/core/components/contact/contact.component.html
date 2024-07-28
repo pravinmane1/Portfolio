@@ -53,7 +53,7 @@
               >
             </div>
 
-            <button type="submit" [disabled]="contactForm.invalid || isSending">Send</button>
+            <button type="submit" [disabled]="contactForm.invalid || isSending" aria-label="Send">Send</button>
           </form>
         </div>
       </div>
@@ -65,6 +65,7 @@
               ngSrc="/assets/contact-icons/location.png"
               height="20"
               width="20"
+              alt="location"
             />
             <span class="contact-item">Pune, India</span>
           </a>
@@ -74,6 +75,7 @@
               ngSrc="/assets/contact-icons/phone.png"
               height="20"
               width="20"
+              alt="contact number"
             />
             <span class="contact-item">+91 7057065515</span>
           </a>
@@ -83,6 +85,7 @@
               ngSrc="/assets/contact-icons/email.png"
               height="20"
               width="20"
+              alt="email id"
             />
             <span class="contact-item">manepravin11122&#64;gmail.com</span>
           </a>

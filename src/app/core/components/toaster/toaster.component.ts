@@ -31,7 +31,7 @@ export class ToasterComponent implements OnInit, OnDestroy {
     );
   }
 
-  showToaster(message: string, isSuccess: boolean = true) {
+  showToaster(message: string, isSuccess = true) {
     this.message = message || '';
     this.isSuccess = isSuccess;
     this.isVisible = true;

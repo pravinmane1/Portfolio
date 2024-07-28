@@ -27,13 +27,13 @@ export class HeaderComponent implements OnInit {
   public isLoading = signal(true);
 
   @HostListener('window:scroll', ['$event'])
-  scrollHandler(event: any) {
-    const newScrollY = event?.currentTarget?.scrollY;
+  scrollHandler(event: Event) {
+    const newScrollY = (event?.currentTarget as Window)?.scrollY;
     if (newScrollY && Math.abs(newScrollY - this.currentScrollY) > 10) {
       const scrolledTowardUp = newScrollY < this.currentScrollY;
       const headerCrossed = newScrollY > 100;
       this.isHeaderVisible.set(!headerCrossed || scrolledTowardUp);
-      this.currentScrollY = event.currentTarget.scrollY;
+      this.currentScrollY = (event.currentTarget as Window)?.scrollY;
     }
   }
 

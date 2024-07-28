@@ -20,7 +20,7 @@ export class FirebaseConfigService {
 
   public logEvent(
     eventType: ANALYTICS_EVENT_TYPE,
-    eventParams?: { [key: string]: any }
+    eventParams?: Record<string, string>
   ) {
     if (isDevMode()) {
       return;
