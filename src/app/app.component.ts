@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, isDevMode, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PortfolioComponent } from './core/components/portfolio/portfolio.component';
-import { UnderDevelopmentComponent } from './core/components/under-development/under-development.component';
 import {
   MODE_STORAGE_SERVICE,
   ModeLocalStorageService,
@@ -16,13 +15,7 @@ import { ToasterComponent } from './core/components/toaster/toaster.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    CommonModule,
-    UnderDevelopmentComponent,
-    PortfolioComponent,
-    ToasterComponent,
-  ],
+  imports: [RouterOutlet, CommonModule, PortfolioComponent, ToasterComponent],
   providers: [
     ModeToggleService,
     ReactiveFormsModule,
@@ -32,16 +25,9 @@ import { ToasterComponent } from './core/components/toaster/toaster.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  isDevMode = isDevMode();
-  counter = signal(0);
-
   constructor(private firebaseService: FirebaseConfigService) {}
 
   ngOnInit(): void {
     this.firebaseService.logEvent(ANALYTICS_EVENT_TYPE.SITE_OPENED);
-  }
-
-  incrementCounter() {
-    this.counter.set(this.counter() + 1);
   }
 }
