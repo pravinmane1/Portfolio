@@ -28,11 +28,19 @@
   gap: 4rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  max-width: 60rem;
+  width: 100%;
   box-shadow: $clr-card-shadow 1px 12px 29px 0px;
 }
 
 .experience-info {
-  max-width: 40rem;
+  flex-grow: 1;
+  width: 80%;
+}
+
+.timeline {
+  width: 20%;
+  flex-grow: 1;
 }
 
 .role-title {
