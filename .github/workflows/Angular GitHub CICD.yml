@@ -13,68 +13,68 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v2
+      # - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-node-modules
-        with:
-          # caching node_modules
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+      # - name: Cache node modules
+      #   id: cache-nodemodules
+      #   uses: actions/cache@v4
+      #   env:
+      #     cache-name: cache-node-modules
+      #   with:
+      #     # caching node_modules
+      #     path: node_modules
+      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-build-${{ env.cache-name }}-
+      #       ${{ runner.os }}-build-
+      #       ${{ runner.os }}-
 
-      - name: Install Dependencies
-        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-        run: |
-          npm ci
-
-      - name: Build
-        run: |
-          npm run build
-
-      # - name: Lint
+      # - name: Install Dependencies
+      #   if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       #   run: |
-      #     npm run lint
+      #     npm ci
 
-      - name: Conventional Changelog Action
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          output-file: "false"
+      # - name: Build
+      #   run: |
+      #     npm run build
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+      # # - name: Lint
+      # #   run: |
+      # #     npm run lint
+
+      # - name: Conventional Changelog Action
+      #   id: changelog
+      #   uses: TriPSs/conventional-changelog-action@v3
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     output-file: "false"
+
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   if: ${{ steps.changelog.outputs.skipped == 'false' }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ steps.changelog.outputs.tag }}
+      #     release_name: ${{ steps.changelog.outputs.tag }}
+      #     body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Debug Secrets (Do Not Print Sensitive Info)
         env:
           ANGULAR_APP_APIKEY: ${{ secrets.ANGULAR_APP_APIKEY }}
-        run: echo "API_URL is set - ${{ $ANGULAR_APP_APIKEY != '' && 'YES' || 'NO' }}"
+        run: echo "API Key is set ${ANGULAR_APP_APIKEY:+YES} NO"
 
-      - name: Create environment config file
-        run: |
-          echo '{
-            "apiKey": "${{ secrets.ANGULAR_APP_APIKEY }}"
-          }' > public/assets/config.json
+      # - name: Create environment config file
+      #   run: |
+      #     echo '{
+      #       "apiKey": "${{ secrets.ANGULAR_APP_APIKEY }}"
+      #     }' > public/assets/config.json
                 
-      - name: Deploy
-        run: |
-          npm run deploy
+      # - name: Deploy
+      #   run: |
+      #     npm run deploy
