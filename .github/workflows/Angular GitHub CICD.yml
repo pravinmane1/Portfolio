@@ -64,6 +64,12 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
+      - name: Create environment config file
+        run: |
+          echo '{
+            "apiKey": "${{ secrets.ANGULAR_APP_APIKEY }}"
+          }' > src/config.json
+                
       - name: Deploy
         run: |
           npm run deploy
