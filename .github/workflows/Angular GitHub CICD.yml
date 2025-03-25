@@ -72,8 +72,8 @@ jobs:
       - name: Create environment config file
         run: |
           echo '{
-            "apiKey": "${{ secrets.ANGULAR_APP_APIKEY }}"
-          }' > public/assets/config.json
+            "CONTACTINFO_FORMSPREE_URL": "${{ vars.CONTACTINFO_FORMSPREE_URL }}"
+          }' > public/config.json
                 
       - name: Deploy
         run: |
