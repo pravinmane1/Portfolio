@@ -64,6 +64,9 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
+      - name: Debug Secrets (Do Not Print Sensitive Info)
+        run: echo "API_URL is set - ${{ secrets.API_URL != '' && 'YES' || 'NO' }}"
+
       - name: Create environment config file
         run: |
           echo '{
