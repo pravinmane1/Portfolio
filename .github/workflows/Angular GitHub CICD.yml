@@ -68,7 +68,7 @@ jobs:
         run: |
           echo '{
             "apiKey": "${{ secrets.ANGULAR_APP_APIKEY }}"
-          }' > src/config.json
+          }' > src/assets/config.json
                 
       - name: Deploy
         run: |
