@@ -47,7 +47,7 @@ export class ContactComponent {
       const name = this.contactForm.value.name;
       const email = this.contactForm.value.email;
       const message = this.contactForm.value.message;
-      const url = `https://formspree.io/f/mzzpegwv`;
+      const url = (window as any).config?.CONTACTINFO_FORMSPREE_URL;
       this.isSending = true;
       this.httpClient
         .post(url, { name, email, message })

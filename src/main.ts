@@ -8,7 +8,7 @@ fetch('/config.json')
     (window as any).config = config;
     bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
-  }).catch((err)=>{
+  }).catch(()=>{
    bootstrapApplication(AppComponent, appConfig)
     .catch((err) => console.error(err));
   });
