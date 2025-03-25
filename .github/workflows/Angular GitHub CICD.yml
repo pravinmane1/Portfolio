@@ -65,9 +65,9 @@ jobs:
       #     body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Debug Secrets (Do Not Print Sensitive Info)
-        env:
-          ANGULAR_APP_APIKEY: ${{ secrets.ANGULAR_APP_APIKEY }}
-        run: echo "API Key is set ${ANGULAR_APP_APIKEY:+YES} NO"
+        # env:
+        #   ANGULAR_APP_APIKEY: ${{ secrets.ANGULAR_APP_APIKEY }}
+        run: echo "Checking secrets API_URL ${{ secrets.ANGULAR_APP_APIKEY != '' && 'SET' || 'NOT SET' }}"
 
       # - name: Create environment config file
       #   run: |
