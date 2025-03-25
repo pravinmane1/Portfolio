@@ -29,8 +29,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.firebaseService.logEvent(ANALYTICS_EVENT_TYPE.SITE_OPENED);
-
-    const apiKey = process.env.ANGULAR_APP_APIKey;
-    console.log('api key is', apiKey);
   }
 }
