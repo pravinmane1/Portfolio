@@ -1,0 +1,45 @@
+<section id="journey" class="journey">
+  <div class="journey-header" appInView>
+    <p class="section-label">Journey</p>
+    <h2 class="journey-title">Where I've built.</h2>
+  </div>
+
+  <div class="journey-track" appInView>
+    @for (step of steps; track step.year) {
+    <button
+      class="journey-node"
+      [class.active]="activeIndex() === $index"
+      (click)="setActive($index)"
+      [attr.aria-label]="step.company"
+    >
+      <span class="node-year">{{ step.year }}</span>
+      <span class="node-company">{{ step.company }}</span>
+    </button>
+    }
+    <div class="track-line"></div>
+    <div
+      class="track-progress"
+      [style.width]="activeIndex() === 0 ? '0%' : activeIndex() === 1 ? '50%' : '100%'"
+    ></div>
+  </div>
+
+  <div class="journey-detail" appInView>
+    @if (steps[activeIndex()]; as step) {
+    <div class="detail-card">
+      <span class="detail-year">{{ step.year }} @if (activeIndex() === steps.length - 1) { — Present}</span>
+      <h3 class="detail-role">{{ step.role }}</h3>
+      <p class="detail-company">{{ step.company }}</p>
+      <ul class="detail-list" role="list">
+        @for (d of step.detail; track d) {
+        <li>{{ d }}</li>
+        }
+      </ul>
+      <ul class="detail-tech" role="list">
+        @for (t of step.tech; track t) {
+        <li>{{ t }}</li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</section>

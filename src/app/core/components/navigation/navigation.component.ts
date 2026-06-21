@@ -1,43 +1,24 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  signal,
-} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterModule, NgOptimizedImage, CommonModule],
+  imports: [CommonModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
   @Input() withCloseBtn = false;
-  @Output() closeClicked = new EventEmitter();
-  public moveNavRight = signal(false);
-  public isLoading = signal(true);
-  public navOptions = signal([
-    { href: '#about', title: 'About' },
-    { href: '#experience', title: 'Experience' },
-    { href: '#projects', title: 'Projects' },
-    { href: '#contact', title: 'Contact' },
+  @Input() activeSection = 'hero';
+  @Output() closeClicked = new EventEmitter<void>();
+
+  navItems = signal([
+    { href: '#principles', title: 'Philosophy', id: 'principles' },
+    { href: '#work', title: 'Work', id: 'work' },
+    { href: '#journey', title: 'Journey', id: 'journey' },
+    { href: '#connect', title: 'Connect', id: 'connect' },
   ]);
 
-  onCloseClicked() {
-    this.moveNavRight.set(true);
-    setTimeout(() => {
-      this.closeClicked.emit();
-    },300);
-  }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading.set(false);
-    },100);
-  }
+  onNavClick() { this.closeClicked.emit(); }
 }

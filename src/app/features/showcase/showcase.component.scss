@@ -1,0 +1,160 @@
+@import "../../../styles.scss";
+
+.showcase {
+  padding: $space-7xl 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: 10%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, $clr-accent-muted, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.showcase-header {
+  max-width: 1200px;
+  margin: 0 auto $space-3xl;
+  padding: 0 $space-xl;
+
+  @media (max-width: 768px) {
+    padding: 0 $space-md;
+  }
+}
+
+.showcase-track {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $space-lg;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: $space-lg $space-xl;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+
+  @media (max-width: 768px) {
+    flex-flow: column nowrap;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0 $space-md;
+    gap: $space-md;
+  }
+}
+
+.showcase-card {
+  flex: 0 0 420px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-flow: column nowrap;
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: border-color $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+
+  &:hover {
+    border-color: $clr-accent;
+    transform: translateY(-4px);
+
+    .card-glow { opacity: 0.4; }
+    .card-cursor-glow { opacity: 0.6; }
+    .card-arrow { opacity: 1; transform: translate(0, 0); }
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 auto;
+  }
+}
+
+.card-visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: $clr-bg;
+}
+
+.card-image-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $duration-slower $ease-out-expo;
+  .showcase-card:hover & { transform: scale(1.03); }
+}
+
+.card-cursor-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), $clr-accent-glow, transparent 60%);
+  opacity: 0;
+  transition: opacity $duration-normal $ease-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.showcase-card:hover .card-cursor-glow {
+  opacity: 0.6;
+}
+
+.card-body {
+  padding: $space-lg;
+  flex: 1;
+}
+
+.card-title {
+  font-family: $ff-display;
+  font-size: $fs-d-lg;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  margin-bottom: $space-xs;
+}
+
+.card-desc {
+  font-size: $fs-b-sm;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+  margin-bottom: $space-md;
+}
+
+.card-tech {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $space-2xs;
+
+  li {
+    font-family: $ff-mono;
+    font-size: $fs-m-xs;
+    color: $clr-accent;
+    padding: 2px $space-xs;
+    border: 1px solid $clr-accent-muted-hover;
+    border-radius: $radius-sm;
+  }
+}
+
+.card-arrow {
+  position: absolute;
+  top: $space-md;
+  right: $space-md;
+  font-size: 1.25rem;
+  color: $clr-accent;
+  opacity: 0;
+  transform: translate(8px, -8px);
+  transition: opacity $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+  pointer-events: none;
+}

@@ -1,86 +1,85 @@
 @import "../../../../styles.scss";
-@import "../../../../styles/variables.scss";
 
-.sticky-header {
-  flex-grow: 1;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  padding: 0 2rem;
-  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+.header-wrap {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  -webkit-backdrop-filter: blur(3rem);
-  backdrop-filter: blur(3rem);
-  transition-delay: 100ms;
-  box-shadow: 0px 0px 20px 0px $clr-header-shadow;
+  top: 0; left: 0; right: 0;
+  z-index: $z-nav;
+  background: $clr-header-bg;
+  border-bottom: 1px solid $clr-header-border;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform $duration-normal $ease-out-expo;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
 }
 
-.fade-up {
-  opacity: 0.01;
-  transform: translateY(-20px);
-}
-
-.header-container {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.desktop-navbar {
-  flex-grow: 1;
-  margin: 1.5rem 0;
-}
-
-.hide-header {
-  transform: translateY(-5rem);
-}
-
-.only-mobile-visible {
-  display: none;
-}
-
-.header-span {
-  flex-grow: 1;
+.header-bar {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-xl;
+  height: 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 $space-md;
+  }
 }
 
-.mode-toggle {
-  margin: 1rem;
+.header-left { display: flex; align-items: center; }
+.header-right { display: flex; align-items: center; gap: $space-sm; }
+
+.logo-link { text-decoration: none; }
+
+.logo-text {
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+  color: $clr-text-primary;
+  letter-spacing: $ls-tight;
+  transition: color $duration-fast $ease-out;
+  &:hover { color: $clr-accent; }
 }
 
-.mobile-nav-icon {
+.desktop-nav {
+  @media (max-width: 768px) { display: none; }
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-flow: column nowrap;
+  gap: 4px;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: $space-xs;
+
+  span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: $clr-text-primary;
+    border-radius: 1px;
+    &:last-child { width: 12px; }
+  }
+
+  @media (max-width: 768px) { display: flex; }
 }
 
-@media (max-width: 800px) {
-  .header-span {
-    justify-content: space-between;
-  }
-  .desktop-navbar {
-    display: none;
-  }
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-overlay;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+}
 
-  .only-mobile-visible {
-    display: block;
-  }
-
-  .mobile-navbar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 8;
-  }
-
-  .logo {
-    height: 50px;
-    width: 50px;
-  }
+.mobile-nav {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  z-index: $z-overlay + 1;
+  width: min(300px, 85vw);
 }

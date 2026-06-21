@@ -1,39 +1,44 @@
-<section id="projects" class="project-section">
-  <h1 class="section-title">Projects</h1>
-  <div class="projects">
-    @for (project of visibleProjects; track $index) {
-    <a class="project-card" [href]="project.live" target="_blank">
-      <div>
+<section id="work" class="projects-section">
+  <div class="section-header" appInView>
+    <h2 class="section-title">Featured Work</h2>
+    <p class="section-subtitle">Projects that demonstrate my approach to building software.</p>
+  </div>
+
+  <div class="projects-grid">
+    @for (project of visibleProjects; track project.title) {
+    <a
+      class="project-card stagger-{{ $index + 1 }}"
+      [href]="project.live"
+      target="_blank"
+      appInView
+    >
+      <div class="project-image-wrap">
         <img
           [ngSrc]="project.screenshot"
-          alt="project screenshot"
-          height="100"
-          width="150"
-          class="project-img"
+          [alt]="project.title + ' screenshot'"
+          width="300"
+          height="200"
+          class="project-image"
         />
       </div>
-      <div class="project-info">
-        <div class="project-title">{{ project.title }}</div>
-        <div class="project-description">
-          {{ project.description }}
-        </div>
-        <ul role="list" class="tech-list">
-          @for (tech of project.techList; track $index) {
+      <div class="project-body">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+        <ul role="list" class="project-tech">
+          @for (tech of project.techList; track tech) {
           <li>{{ tech }}</li>
           }
         </ul>
       </div>
+      <span class="project-arrow">↗</span>
     </a>
     }
   </div>
-  @if (projects.length>visibleProjects.length) {
-  <div
-    class="more"
-    (click)="showMoreProjects()"
-    (keypress)="showMoreProjects()"
-    tabindex="0"
-  >
-    more...
-  </div>
+
+  @if (hasMore) {
+  <button class="show-more-btn" (click)="showMore()">
+    Show More
+    <span class="arrow-down">↓</span>
+  </button>
   }
 </section>

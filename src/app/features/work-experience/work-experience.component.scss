@@ -1,110 +1,144 @@
 @import "../../../styles.scss";
 
 .experience-section {
-  padding: 4rem 1rem;
+  padding: $space-5xl 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 4rem;
-  margin: 0 4rem;
-  animation: fade-in ease-in-out;
-  animation-timeline: view();
-  animation-range-start: cover;
-  animation-range-end: contain;
+
+  @media (max-width: 768px) {
+    padding: $space-3xl 0;
+  }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
-  }
+.section-header {
+  text-align: center;
+  margin-bottom: $space-3xl;
+}
+
+// ── Timeline ────────────────────────────────
+.timeline-list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+  max-width: 640px;
+  width: 100%;
 }
 
 .experience-card {
   display: flex;
   flex-flow: row nowrap;
-  gap: 4rem;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  max-width: 60rem;
-  width: 100%;
-  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
+  gap: $space-lg;
+  padding-bottom: $space-2xl;
+
+  &:last-child {
+    padding-bottom: 0;
+
+    .timeline-line {
+      display: none;
+    }
+  }
 }
 
-.experience-info {
-  flex-grow: 1;
-  width: 80%;
+.timeline-marker {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
 }
 
-.timeline {
-  width: 20%;
-  flex-grow: 1;
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $clr-accent;
+  flex-shrink: 0;
+  margin-top: 6px;
 }
 
-.role-title {
-  font-weight: 500;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+.timeline-line {
+  width: 1px;
+  flex: 1;
+  background: $clr-border;
+  margin-top: $space-sm;
 }
 
-.role-description {
-  margin-bottom: 1rem;
+// ── Card Content ────────────────────────────
+.card-content {
+  flex: 1;
+  padding-bottom: $space-sm;
+}
+
+.card-period {
+  display: inline-block;
+  font-family: $ff-mono;
+  font-size: $fs-xs;
+  font-weight: $fw-medium;
+  color: $clr-accent;
+  background: $clr-accent-muted;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+  margin-bottom: $space-sm;
+}
+
+.card-role {
+  font-size: $fs-xl;
+  font-weight: $fw-semibold;
+  color: $clr-text-primary;
+  margin-bottom: $space-xs;
+}
+
+.card-company {
+  font-size: $fs-base;
+  color: $clr-text-secondary;
+  margin-bottom: $space-md;
+}
+
+.card-summary {
+  font-size: $fs-base;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+  margin-bottom: $space-md;
+}
+
+.card-bullets {
+  margin-bottom: $space-md;
+
+  li {
+    font-size: $fs-sm;
+    color: $clr-text-secondary;
+    line-height: $lh-relaxed;
+    margin-bottom: $space-sm;
+    padding-left: $space-lg;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $clr-border-hover;
+    }
+  }
 }
 
 .tech-list {
   display: flex;
   flex-flow: row wrap;
-  gap: 0.5rem;
+  gap: $space-sm;
 
   li {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: 2rem;
-    background-color: rgb(0 88 247 / 18%);
-    color: $clr-primary-500;
+    font-family: $ff-mono;
+    font-size: $fs-xs;
+    font-weight: $fw-medium;
+    padding: $space-xs $space-sm;
+    border-radius: $radius-sm;
+    background: $clr-accent-muted;
+    color: $clr-accent;
   }
 }
 
-.experience-text {
-  max-width: 600px;
-}
-
-p {
-  font-size: 1rem;
-
-  span {
-    color: $clr-primary-500;
-    font-size: 1.0625rem; //625
-  }
-}
-
-.hyperlink {
-  text-decoration-color: rgba(255, 255, 255, 0);
-  transition: text-decoration-color 300ms ease-in-out;
-}
-
-.hyperlink:hover {
-  text-decoration-color: $clr-primary-500;
-}
-
-@media (max-width: 900px) {
-  .experience-section {
-    gap: 2rem;
-    margin: 0 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .experience-card {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .experience-section {
-    margin: 0;
-    animation-range-start: -50%;
-  }
-}

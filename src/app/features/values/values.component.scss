@@ -1,0 +1,70 @@
+@import "../../../styles.scss";
+
+.values {
+  padding: $space-7xl 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: $space-xl;
+  padding-right: $space-xl;
+
+  @media (max-width: 768px) {
+    padding: $space-4xl $space-md;
+  }
+}
+
+.values-header {
+  margin-bottom: $space-3xl;
+}
+
+.values-title {
+  font-family: $ff-display;
+  font-size: $fs-d-xl;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  line-height: $lh-tight;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-lg;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  transition: border-color $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+
+  &:hover {
+    border-color: $clr-accent;
+    transform: translateY(-2px);
+  }
+}
+
+.value-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: $space-md;
+}
+
+.value-headline {
+  font-family: $ff-display;
+  font-size: $fs-b-lead;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  line-height: $lh-tight;
+  margin-bottom: $space-sm;
+}
+
+.value-body {
+  font-size: $fs-b-sm;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+}

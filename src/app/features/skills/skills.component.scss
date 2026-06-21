@@ -1,0 +1,73 @@
+@import "../../../styles.scss";
+
+.skills-section {
+  padding: $space-5xl 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: $space-3xl 0;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-lg;
+  width: 100%;
+  max-width: 800px;
+  margin-top: $space-2xl;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-category {
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius-xl;
+  padding: $space-xl;
+  transition: border-color $duration-normal $ease-out,
+              box-shadow $duration-normal $ease-out;
+
+  &:hover {
+    border-color: $clr-border-hover;
+    box-shadow: $shadow-md;
+  }
+}
+
+.category-name {
+  font-size: $fs-sm;
+  font-weight: $fw-semibold;
+  color: $clr-text-tertiary;
+  text-transform: uppercase;
+  letter-spacing: $ls-wide;
+  margin-bottom: $space-md;
+}
+
+.skill-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $space-sm;
+}
+
+.skill-tag {
+  font-family: $ff-mono;
+  font-size: $fs-xs;
+  font-weight: $fw-medium;
+  padding: $space-xs $space-sm;
+  border-radius: $radius-sm;
+  background: $clr-accent-muted;
+  color: $clr-accent;
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: border-color $duration-fast $ease-out,
+              background $duration-fast $ease-out;
+
+  &:hover {
+    border-color: $clr-accent;
+    background: $clr-accent-muted-hover;
+  }
+}

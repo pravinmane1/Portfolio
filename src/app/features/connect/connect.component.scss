@@ -1,0 +1,105 @@
+@import "../../../styles.scss";
+
+.connect {
+  padding: $space-7xl $space-xl;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: $space-4xl $space-md;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, $clr-accent, transparent);
+    opacity: 0.3;
+  }
+}
+
+.connect-inner {
+  text-align: center;
+  max-width: 480px;
+}
+
+.connect-portrait {
+  position: relative;
+  display: inline-block;
+  margin-bottom: $space-xl;
+}
+
+.connect-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.connect-portrait-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, $clr-accent-glow, transparent 65%);
+  opacity: 0.5;
+  animation: portraitGlow 4s ease-in-out infinite;
+}
+
+.connect-headline {
+  font-family: $ff-body;
+  font-size: $fs-d-xl;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  line-height: $lh-tight;
+  letter-spacing: $ls-tight;
+  margin-bottom: $space-2xl;
+}
+
+.connect-email {
+  display: inline-block;
+  font-family: $ff-mono;
+  font-size: $fs-b-sm;
+  color: $clr-accent;
+  text-decoration: none;
+  padding: $space-sm $space-lg;
+  border: 1px solid $clr-accent-muted-hover;
+  border-radius: $radius-lg;
+  transition: border-color $duration-normal $ease-out,
+              background $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+  position: relative;
+  margin-bottom: $space-xl;
+
+  &:hover {
+    border-color: $clr-accent;
+    background: $clr-accent-muted;
+    transform: translateY(-2px);
+  }
+}
+
+.email-hint {
+  display: block;
+  font-family: $ff-body;
+  font-size: $fs-b-xs;
+  color: $clr-text-tertiary;
+  margin-top: $space-2xs;
+  letter-spacing: $ls-normal;
+}
+
+.connect-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $space-md;
+}
+
+.connect-location {
+  font-size: $fs-b-xs;
+  color: $clr-text-tertiary;
+}

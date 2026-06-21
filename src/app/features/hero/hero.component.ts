@@ -1,19 +1,17 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
-import { SocialLinksComponent } from "../social-links/social-links.component";
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgOptimizedImage, CommonModule, SocialLinksComponent],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements OnInit {
-  public isLoading = signal(true);
+  isRevealed = signal(false);
+
   ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading.set(false);
-    });
+    setTimeout(() => this.isRevealed.set(true), 300);
   }
 }

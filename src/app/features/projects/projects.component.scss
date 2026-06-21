@@ -1,104 +1,160 @@
 @import "../../../styles.scss";
 
-.project-section {
-  min-height: 100vh;
-  padding: 4rem 1rem;
+.projects-section {
+  padding: $space-5xl 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 4rem;
-  margin: 0 4rem;
-  animation: fade-in ease-in-out;
-  animation-timeline: view();
-  animation-range-start: -30%;
-  animation-range-end: contain;
-}
 
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
+  @media (max-width: 768px) {
+    padding: $space-3xl 0;
   }
 }
 
-.projects {
+.section-header {
+  text-align: center;
+  margin-bottom: $space-3xl;
+}
+
+.projects-grid {
   display: flex;
-  flex-flow: column wrap;
-  gap: 1rem;
-}
-
-.project-img {
-  height: 100px;
-  width: 150px;
-  min-height: 100px;
-  min-width: 150px;
-  object-fit: contain;
+  flex-flow: column nowrap;
+  gap: $space-md;
+  width: 100%;
+  max-width: 700px;
 }
 
 .project-card {
   display: flex;
   flex-flow: row nowrap;
-  gap: 4rem;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  color: unset;
-  text-decoration: unset;
-  transition: box-shadow 300ms ease-out;
+  align-items: flex-start;
+  gap: $space-lg;
+  padding: $space-lg;
+  border-radius: $radius-xl;
+  border: 1px solid $clr-border;
+  background: $clr-surface;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: border-color $duration-normal $ease-out,
+              box-shadow $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+
+  &:hover {
+    border-color: $clr-border-hover;
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+
+    .project-arrow {
+      opacity: 1;
+      transform: translate(4px, -4px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-flow: column nowrap;
+    gap: $space-md;
+  }
+}
+
+.project-image-wrap {
+  flex-shrink: 0;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $clr-surface-hover;
+}
+
+.project-image {
+  object-fit: cover;
+  width: 200px;
+  height: 130px;
+  border-radius: $radius-lg;
+  transition: transform $duration-slow $ease-out;
+
+  .project-card:hover & {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.project-body {
+  flex: 1;
+  min-width: 0;
 }
 
 .project-title {
-  font-weight: 500;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+  color: $clr-text-primary;
+  margin-bottom: $space-sm;
 }
 
 .project-description {
-  margin-bottom: 0.5rem;
+  font-size: $fs-sm;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+  margin-bottom: $space-md;
 }
 
-.project-info {
-  max-width: 40rem;
-}
-
-.project-card:hover {
-  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
-}
-
-.tech-list {
+.project-tech {
   display: flex;
   flex-flow: row wrap;
-  gap: 0.5rem;
+  gap: $space-sm;
 
   li {
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: 2rem;
-    background-color: rgb(0 88 247 / 18%);
-    color: $clr-primary-500;
+    font-family: $ff-mono;
+    font-size: $fs-xs;
+    font-weight: $fw-medium;
+    padding: $space-xs $space-sm;
+    border-radius: $radius-sm;
+    background: $clr-accent-muted;
+    color: $clr-accent;
   }
 }
 
-.more {
-  text-decoration: underline;
-  color: $clr-primary-500;
-  margin-top: -2rem;
+.project-arrow {
+  position: absolute;
+  top: $space-md;
+  right: $space-md;
+  font-size: $fs-lg;
+  color: $clr-text-tertiary;
+  opacity: 0;
+  transition: opacity $duration-normal $ease-out,
+              transform $duration-normal $ease-out;
+
+  @media (max-width: 600px) {
+    opacity: 0.5;
+  }
+}
+
+.show-more-btn {
+  margin-top: $space-xl;
+  padding: $space-sm $space-xl;
+  background: transparent;
+  border: 1px solid $clr-border;
+  border-radius: $radius-lg;
+  color: $clr-text-secondary;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
   cursor: pointer;
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  transition: border-color $duration-fast $ease-out,
+              color $duration-fast $ease-out,
+              background $duration-fast $ease-out;
+
+  &:hover {
+    border-color: $clr-accent;
+    color: $clr-accent;
+    background: $clr-accent-muted;
+  }
 }
 
-@media (max-width: 480px) {
-  .project-card {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    align-items: center;
-  }
-  .project-section {
-    margin: 0;
-    animation-range-start: -90%;
-  }
+.arrow-down {
+  font-size: $fs-xs;
 }

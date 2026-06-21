@@ -1,0 +1,29 @@
+<section id="work" class="showcase">
+  <div class="showcase-header" appInView>
+    <p class="section-label">Selected Work</p>
+  </div>
+
+  <div class="showcase-track">
+    @for (project of projects; track project.title) {
+    <a class="showcase-card" [href]="project.live" target="_blank" appInView #card>
+      <div class="card-visual">
+        <div class="card-image-wrap">
+          <img [src]="project.image" [alt]="project.title" class="card-image" loading="lazy" />
+        </div>
+        <div class="card-glow"></div>
+        <div class="card-cursor-glow"></div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <p class="card-desc">{{ project.description }}</p>
+        <ul class="card-tech" role="list">
+          @for (t of project.tech; track t) {
+          <li>{{ t }}</li>
+          }
+        </ul>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+    }
+  </div>
+</section>

@@ -1,35 +1,35 @@
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="p1 animate" [ngClass]="{ 'fade-up': isLoading() }">
-      Hi, my name is
-    </h1>
-    <span class="name-holder">
-      <h1 class="gradient t1 animate" [ngClass]="{ 'fade-up': isLoading() }">
-        Pravin
-      </h1>
-      <h1 class="gradient t2 animate" [ngClass]="{ 'fade-up': isLoading() }">
-        Mane.
-      </h1>
-    </span>
-    <p class="title-statement animate" [ngClass]="{ 'fade-up': isLoading() }">
-      I am a <span class="job-title">full stack software engineer </span>with a
-      strong focus in development, currently working at
-      <a href="https://www.jpmorganchase.com/" target="_blank" class="jpmcolor">JP Morgan Chase & Co.</a>
-    </p>
-    <app-social-links
-      class="social-media-links animate"
-      [ngClass]="{ 'fade-up': isLoading() }"
-    ></app-social-links>
-  </div>
-  <div class="hero-image-holder animate" [ngClass]="{ 'fade-up': isLoading() }">
-    <img
-      ngSrc="/assets/hero_image.webp"
-      width="250"
-      height="250"
-      class="hero-image"
-      ngSrcset="100w, 200w, 300w"
-      alt="hero image"
-      priority
-    />
+<section id="hero" class="hero" [class.revealed]="isRevealed()">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="hero-label animate-in stagger-1">Software Engineer</p>
+      <h1 class="hero-name animate-in stagger-2">Pravin Mane</h1>
+      <p class="hero-tagline animate-in stagger-3">
+        I build enterprise Angular systems<br />that scale at JP Morgan Chase.
+      </p>
+      <p class="hero-tech animate-in stagger-4">
+        Angular &middot; TypeScript &middot; .NET Core &middot; AWS
+      </p>
+      <div class="hero-actions animate-in stagger-5">
+        <a href="#principles" class="hero-cta">
+          See my work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+        <a href="#connect" class="hero-link">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-visual animate-in stagger-3">
+      <div class="hero-portrait-frame">
+        <img
+          ngSrc="/assets/hero_image.webp"
+          width="360"
+          height="360"
+          class="hero-portrait"
+          alt="Pravin Mane"
+          priority
+        />
+        <div class="hero-frame-border"></div>
+      </div>
+      <div class="hero-accent-shape"></div>
+    </div>
   </div>
 </section>

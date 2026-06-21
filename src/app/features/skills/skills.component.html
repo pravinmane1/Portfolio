@@ -1,0 +1,17 @@
+<section id="skills" class="skills-section">
+  <h2 class="section-title">Skills & Technologies</h2>
+  <p class="section-subtitle">Technologies I work with daily to build and ship production software.</p>
+
+  <div class="skills-grid">
+    @for (category of categories; track category.name) {
+    <div class="skill-category">
+      <h3 class="category-name">{{ category.name }}</h3>
+      <ul role="list" class="skill-list">
+        @for (skill of category.items; track skill) {
+        <li class="skill-tag">{{ skill }}</li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</section>

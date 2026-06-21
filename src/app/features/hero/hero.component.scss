@@ -1,201 +1,179 @@
 @import "../../../styles.scss";
 
-.hero-section {
-  padding: 4rem 1rem;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+.hero {
   min-height: 100vh;
-  justify-content: center;
-  gap: 6rem;
-}
-
-.hero-image {
-  border-radius: 50%;
-  margin: 1rem;
-  min-height: 250px;
-  min-width: 250px;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.1;
-  }
-}
-
-.hero-content {
-  margin: 1rem;
-  animation: fade-in linear;
-  animation-timeline: scroll();
-}
-
-.title-statement {
-  font-size: 2rem;
-  font-weight: 300;
-  max-width: 40rem;
-}
-
-.job-title {
-  font-weight: 400;
-  color: $clr-primary-500;
-}
-
-.social-media-links {
-  display: block;
-  transition-delay: 1000ms !important;
-}
-
-.p1 {
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: $clr-primary-500;
-  letter-spacing: 0.05em;
-}
-
-.gradient {
-  font-size: 5rem;
-  font-weight: 800;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.t1 {
-  background-image: linear-gradient(
-    to bottom right,
-    $clr-secondary-400,
-    $clr-secondary-500,
-    $clr-primary-450
-  );
-}
-
-.t2 {
-  background-image: linear-gradient(
-    to bottom right,
-    $clr-secondary-500,
-    $clr-primary-450,
-    $clr-secondary-400
-  );
-}
-.gradient::before {
-  color: $clr-neutral-900;
-  position: absolute;
-}
-
-.t1::before {
-  content: "Pravin";
-  animation: gradient-background-1 8s infinite;
-}
-.t2::before {
-  content: "Mane.";
-  animation: gradient-background-2 8s infinite;
-}
-
-@keyframes gradient-background-1 {
-  40%,
-  70% {
-    opacity: 0;
-  }
-  70%,
-  100% {
-  }
-}
-@keyframes gradient-background-2 {
-  70%,
-  90% {
-    opacity: 0;
-  }
-  0%,
-  30% {
-    opacity: 1;
-  }
-}
-
-.name-holder {
-  letter-spacing: -0.03em;
   display: flex;
-  flex-flow: row nowrap;
-  gap: 1rem;
-}
+  align-items: center;
+  padding: $space-5xl $space-2xl 0;
 
-.animate {
-  transition: opacity 700ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 700ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.p1 {
-  transition-delay: 600ms !important;
-}
-
-.t1,
-.t2 {
-  transition-delay: 800ms !important;
-}
-
-.title-statement {
-  transition-delay: 900ms !important;
-}
-
-.hero-image-holder {
-  transition-delay: 1000ms !important;
-}
-
-.hero-image {
-  transition: box-shadow 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.hero-image:hover {
-  box-shadow: #0000ff2e 10px 18px 20px 0px;
-}
-
-.fade-up {
-  opacity: 0.01;
-  transform: translateY(20px);
-}
-
-@media (max-width: 480px) {
-  .name-holder {
-    line-height: 3rem;
-    margin: 1.5rem 0;
+  @media (max-width: 768px) {
+    padding: $space-5xl $space-md $space-2xl;
+    min-height: auto;
   }
 }
 
-@media (max-width: 900px) {
-  .hero-section {
-    padding: 1rem;
-    flex-flow: column nowrap;
-    gap: 0;
-  }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4xl;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 
-  .name-holder {
-    flex-wrap: wrap;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: $space-2xl;
+    text-align: center;
   }
+}
 
-  .gradient {
-    font-size: 4rem;
-  }
-  .hero-content {
+// ── Text ────────────────────────────────────
+.hero-text {
+  max-width: 520px;
+
+  @media (max-width: 900px) {
+    max-width: none;
     order: 2;
   }
+}
 
-  .hero-image {
-    order: 1;
-    height: 160px;
-    width: 160px;
-    min-height: 160px;
-    min-width: 160px;
-    margin-top: 4rem;
-    transition-delay: 500ms !important;
-  }
+.hero-label {
+  font-family: $ff-mono;
+  font-size: $fs-mono;
+  font-weight: $fw-medium;
+  color: $clr-accent;
+  text-transform: uppercase;
+  letter-spacing: $ls-mono;
+  margin-bottom: $space-md;
+}
 
-  .title-statement {
-    font-size: 1.5rem;
+.hero-name {
+  font-size: $fs-hero;
+  font-weight: $fw-bold;
+  line-height: $lh-tight;
+  letter-spacing: $ls-tight;
+  color: $clr-text-primary;
+  margin-bottom: $space-lg;
+}
+
+.hero-tagline {
+  font-size: $fs-xl;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+  margin-bottom: $space-lg;
+  font-weight: $fw-regular;
+}
+
+.hero-tech {
+  font-family: $ff-mono;
+  font-size: $fs-mono;
+  color: $clr-text-tertiary;
+  letter-spacing: $ls-mono;
+  margin-bottom: $space-xl;
+}
+
+.hero-actions {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: $space-lg;
+
+  @media (max-width: 900px) {
+    justify-content: center;
   }
 }
 
-.jpmcolor {
-  color: #6f3d1e;
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-sm $space-lg;
+  background: $clr-text-primary;
+  color: $clr-bg;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  border-radius: $radius-lg;
+  text-decoration: none;
+  transition: transform $duration-fast $ease-out,
+              opacity $duration-fast $ease-out;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+}
+
+.hero-link {
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  color: $clr-text-secondary;
+  text-decoration: none;
+  transition: color $duration-fast $ease-out;
+
+  &:hover { color: $clr-text-primary; }
+}
+
+// ── Visual ──────────────────────────────────
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media (max-width: 900px) {
+    order: 1;
+  }
+}
+
+.hero-portrait-frame {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-portrait {
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: $radius-2xl;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 900px) {
+    width: 200px;
+    height: 250px;
+  }
+}
+
+.hero-frame-border {
+  position: absolute;
+  inset: -3px;
+  border-radius: $radius-2xl;
+  background: linear-gradient(135deg, $clr-accent, transparent 40%, $clr-accent 80%);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.hero-accent-shape {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  border-radius: 40% 60% 70% 30% / 40% 50% 50% 60%;
+  background: $clr-accent-muted;
+  top: 10%;
+  right: -30px;
+  z-index: 1;
+  animation: morphShape 12s ease-in-out infinite;
+
+  @media (max-width: 900px) {
+    width: 120px;
+    height: 180px;
+    right: -10px;
+  }
+}
+
+@keyframes morphShape {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 50% 60%; }
+  33% { border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%; }
+  66% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
 }

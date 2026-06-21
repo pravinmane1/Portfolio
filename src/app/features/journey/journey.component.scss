@@ -1,0 +1,189 @@
+@import "../../../styles.scss";
+
+.journey {
+  padding: $space-7xl 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: $space-xl;
+  padding-right: $space-xl;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: $space-4xl $space-md;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 20%;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, $clr-accent-muted, transparent 70%);
+    pointer-events: none;
+    animation: orbFloat 10s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+}
+
+.journey-header {
+  margin-bottom: $space-3xl;
+}
+
+.journey-title {
+  font-family: $ff-display;
+  font-size: $fs-d-xl;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  line-height: $lh-tight;
+}
+
+// ── Interactive Track ───────────────────────
+.journey-track {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: $space-2xl;
+  margin-bottom: $space-3xl;
+  position: relative;
+  padding: $space-lg 0;
+
+  @media (max-width: 600px) {
+    gap: $space-lg;
+  }
+}
+
+.track-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: $clr-border;
+  z-index: 0;
+}
+
+.track-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: $clr-accent;
+  z-index: 1;
+  transition: width $duration-slower $ease-out-expo;
+}
+
+.journey-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: $space-sm;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 $space-lg;
+  color: $clr-text-tertiary;
+  transition: color $duration-normal $ease-out;
+
+  &.active {
+    color: $clr-accent;
+  }
+
+  &:hover { color: $clr-accent-hover; }
+}
+
+.node-year {
+  font-family: $ff-display;
+  font-size: $fs-d-lg;
+  font-weight: $fw-bold;
+  line-height: 1;
+}
+
+.node-company {
+  font-family: $ff-mono;
+  font-size: $fs-m-xs;
+  text-transform: uppercase;
+  letter-spacing: $ls-ultra;
+}
+
+// ── Detail Card ─────────────────────────────
+.journey-detail {
+  min-height: 200px;
+}
+
+.detail-card {
+  background: $clr-surface;
+  border: 1px solid $clr-border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  animation: fadeSlideIn $duration-slow $ease-out-expo;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-year {
+  font-family: $ff-mono;
+  font-size: $fs-m-xs;
+  color: $clr-accent;
+  text-transform: uppercase;
+  letter-spacing: $ls-ultra;
+  display: block;
+  margin-bottom: $space-xs;
+}
+
+.detail-role {
+  font-family: $ff-display;
+  font-size: $fs-d-lg;
+  font-weight: $fw-bold;
+  color: $clr-text-primary;
+  margin-bottom: $space-xs;
+}
+
+.detail-company {
+  font-size: $fs-b-base;
+  color: $clr-text-secondary;
+  margin-bottom: $space-lg;
+}
+
+.detail-list {
+  margin-bottom: $space-lg;
+
+  li {
+    font-size: $fs-b-sm;
+    color: $clr-text-secondary;
+    line-height: $lh-relaxed;
+    margin-bottom: $space-sm;
+    padding-left: $space-lg;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $clr-accent;
+      opacity: 0.5;
+    }
+  }
+}
+
+.detail-tech {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $space-2xs;
+
+  li {
+    font-family: $ff-mono;
+    font-size: $fs-m-xs;
+    color: $clr-accent;
+    padding: 2px $space-xs;
+    border: 1px solid $clr-accent-muted-hover;
+    border-radius: $radius-sm;
+  }
+}

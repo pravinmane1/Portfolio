@@ -1,0 +1,16 @@
+<section id="values" class="values">
+  <div class="values-header" appInView>
+    <p class="section-label">How I Work</p>
+    <h2 class="values-title">The Engineer Behind the Code</h2>
+  </div>
+
+  <div class="values-grid">
+    @for (v of values; track v.title) {
+    <div class="value-card stagger-{{ $index + 1 }}" appInView>
+      <span class="value-icon">{{ v.icon }}</span>
+      <h3 class="value-headline">{{ v.title }}</h3>
+      <p class="value-body">{{ v.body }}</p>
+    </div>
+    }
+  </div>
+</section>

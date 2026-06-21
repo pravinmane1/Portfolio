@@ -2,66 +2,37 @@
 
 .social-media-list {
   display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+  flex-flow: row nowrap;
+  gap: $space-sm;
+  margin-top: 0;
+}
+
+.centered-icons { justify-content: center; }
+
+.list-item {
+  opacity: 0.5;
+  transition: opacity $duration-fast $ease-out;
+  &:hover { opacity: 1; }
 }
 
 .list-item > a {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 0.5rem;
   align-items: center;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
-  position: relative;
-  background: white;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  color: $clr-text-tertiary;
   text-decoration: none;
-}
-
-.social-icon:hover {
-  color: $clr-primary-450;
-  fill: $clr-primary-450;
-}
-.social-icon {
-  color: black;
-  fill: black;
-}
-
-.list-item {
-  opacity: 0.8;
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.list-item:hover {
-  opacity: 1;
-  transform: translateY(-0.25rem);
-}
-
-.list-item > a {
-  color: gray;
-}
-.list-item > a:hover {
-  color: $clr-primary-450;
-}
-
-.list-item > a:after {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  transform: translate(10px, 8px);
-  z-index: -1;
-  background: conic-gradient(
-    from 28deg at 40% -25%,
-    rgba(159, 102, 211, 0),
-    rgb(121 130 255 / 42%)
-  );
-  filter: blur(10px);
-}
-
-@media (max-width: 480px) {
-  .centered-icons {
-    justify-content: space-around;
+  transition: color $duration-fast $ease-out,
+              background $duration-fast $ease-out;
+  &:hover {
+    color: $clr-accent;
+    background: $clr-accent-muted;
   }
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
 }

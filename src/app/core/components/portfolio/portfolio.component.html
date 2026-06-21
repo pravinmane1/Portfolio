@@ -1,9 +1,44 @@
-<app-header class="header"></app-header>
-<main class="expand">
+<app-header></app-header>
+<main>
   <app-hero></app-hero>
-  <app-about></app-about>
-  <app-work-experience></app-work-experience>
-  <app-projects></app-projects>
-  <app-contact></app-contact>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="divider-wave" d="M0,20 C300,0 600,40 1200,20 L1200,40 L0,40 Z" fill="var(--clr-accent)" opacity="0.06"/>
+      <path class="divider-line" d="M0,25 C400,10 800,40 1200,25" fill="none" stroke="var(--clr-accent)" stroke-width="0.5" opacity="0.15"/>
+    </svg>
+  </div>
+
+  <app-principles></app-principles>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line class="divider-dash" x1="200" y1="20" x2="1000" y2="20" stroke="var(--clr-border)" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="600" cy="20" r="2" fill="var(--clr-accent)" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <app-showcase></app-showcase>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="divider-wave" d="M0,20 C300,40 600,0 1200,20 L1200,40 L0,40 Z" fill="var(--clr-accent)" opacity="0.04"/>
+      <line x1="150" y1="20" x2="1050" y2="20" stroke="var(--clr-accent)" stroke-width="0.3" opacity="0.2"/>
+    </svg>
+  </div>
+
+  <app-journey></app-journey>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="600" cy="20" r="3" fill="none" stroke="var(--clr-accent)" stroke-width="0.5" opacity="0.3"/>
+      <line x1="300" y1="20" x2="580" y2="20" stroke="var(--clr-border)" stroke-width="0.5" opacity="0.3"/>
+      <line x1="620" y1="20" x2="900" y2="20" stroke="var(--clr-border)" stroke-width="0.5" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <app-values></app-values>
+
+  <app-connect></app-connect>
 </main>
 <app-footer></app-footer>

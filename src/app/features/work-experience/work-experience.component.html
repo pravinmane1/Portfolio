@@ -1,50 +1,61 @@
 <section id="experience" class="experience-section">
-  <h1 class="section-title">My Work Experience</h1>
-  <div class="experience-card">
-    <div class="timeline">2024 — Present</div>
-    <div class="experience-info">
-      <div class="role-title">
-        Software Engineer II &#64; JP Morgan Chase & Co.
-      </div>
-      <div class="role-description">
-        <p>I have recently started with this role.</p>
-        <p>
-          In this role I am learning new things and as this is a new domain for
-          me, I am exploring new horizons.
-        </p>
-      </div>
-      <ul role="list" class="tech-list">
-        <li>TypeScript</li>
-        <li>Angular</li>
-        <li>.NET Core</li>
-        <li>JavaScript</li>
-        <li>AWS</li>
-      </ul>
-    </div>
+  <div class="section-header" appInView>
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Where I've built, learned, and delivered impact.</p>
   </div>
-  <div class="experience-card">
-    <div class="timeline">2020 — 2024</div>
-    <div class="experience-info">
-      <div class="role-title">Full Stack Developer &#64; SLB</div>
-      <ul class="role-description">
-        <li>Developed responsive web applications with Angular.</li>
-        <li>
-          Contributed in application component restructuring for improving
-          performance with dynamic data fetch.
-        </li>
-        <li>Developed complex UI designs with API integrations.</li>
-        <li>Utilized NgRx for efficient state management in projects.</li>
-        <li>
-          Employed RxJS for effective data stream management in the project.
-        </li>
-      </ul>
-      <ul role="list" class="tech-list">
-        <li>TypeScript</li>
-        <li>Angular</li>
-        <li>.NET Core</li>
-        <li>JavaScript</li>
-        <li>Azure</li>
-      </ul>
+
+  <div class="timeline-list">
+    <!-- JPMC -->
+    <div class="experience-card stagger-1" appInView>
+      <div class="timeline-marker">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="card-content">
+        <span class="card-period">2024 — Present</span>
+        <h3 class="card-role">Software Engineer II</h3>
+        <p class="card-company">JP Morgan Chase & Co.</p>
+        <p class="card-summary">
+          Building and maintaining mission-critical Angular applications serving
+          internal banking operations at enterprise scale.
+        </p>
+        <ul role="list" class="card-bullets">
+          <li>Architected reusable component libraries adopted across multiple teams, reducing duplicate UI code significantly</li>
+          <li>Optimized bundle sizes and lazy-loaded routes, cutting initial page load time in key workflows</li>
+          <li>Implemented comprehensive error boundaries and logging, improving production observability</li>
+          <li>Collaborated with UX and product teams to ship accessible, WCAG-compliant interfaces</li>
+          <li>Mentored junior developers through code reviews and pair programming</li>
+        </ul>
+        <ul role="list" class="tech-list">
+          <li>Angular</li><li>TypeScript</li><li>.NET Core</li><li>AWS</li><li>RxJS</li><li>NgRx</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLB -->
+    <div class="experience-card stagger-2" appInView>
+      <div class="timeline-marker">
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="card-content">
+        <span class="card-period">2020 — 2024</span>
+        <h3 class="card-role">Full Stack Developer</h3>
+        <p class="card-company">SLB</p>
+        <p class="card-summary">
+          Delivered end-to-end features for a flagship oilfield data platform used
+          by field engineers worldwide.
+        </p>
+        <ul role="list" class="card-bullets">
+          <li>Led the component architecture redesign of the primary dashboard, introducing dynamic data fetching that improved perceived performance</li>
+          <li>Built complex, API-driven UI modules with Angular and .NET Core, handling real-time data streams via RxJS</li>
+          <li>Introduced NgRx for state management, reducing prop-drilling bugs and making the codebase more predictable</li>
+          <li>Shipped responsive, cross-browser interfaces tested across Chrome, Edge, and Safari</li>
+          <li>Contributed to Azure DevOps CI/CD pipelines for automated builds and deployments</li>
+        </ul>
+        <ul role="list" class="tech-list">
+          <li>Angular</li><li>TypeScript</li><li>.NET Core</li><li>Azure</li><li>RxJS</li><li>NgRx</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

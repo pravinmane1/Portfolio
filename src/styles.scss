@@ -1,238 +1,38 @@
 @import "styles/variables";
 
-body.dark {
-  @include darken();
-}
-body.light {
-  @include lighten();
-}
+body.dark{@include darken()}body.light{@include lighten()}
 
-$clr-primary-200: var(--clr-primary-200);
-$clr-primary-400: var(--clr-primary-400);
-$clr-primary-450: var(--clr-primary-450);
-$clr-primary-500: var(--clr-primary-500);
+$clr-bg:var(--clr-bg);$clr-surface:var(--clr-surface);$clr-surface-hover:var(--clr-surface-hover);
+$clr-border:var(--clr-border);$clr-border-hover:var(--clr-border-hover);
+$clr-text-primary:var(--clr-text-primary);$clr-text-secondary:var(--clr-text-secondary);
+$clr-text-tertiary:var(--clr-text-tertiary);
+$clr-accent:var(--clr-accent);$clr-accent-hover:var(--clr-accent-hover);
+$clr-accent-muted:var(--clr-accent-muted);
+$clr-string:var(--clr-string);$clr-function:var(--clr-function);
+$clr-comment:var(--clr-comment);$clr-variable:var(--clr-variable);
+$clr-constant:var(--clr-constant);$clr-error:var(--clr-error);
+$clr-terminal-bg:var(--clr-terminal-bg);$clr-line-number:var(--clr-line-number);
 
-$clr-secondary-300: var(--clr-secondary-300);
-$clr-secondary-400: var(--clr-secondary-400);
-$clr-secondary-500: var(--clr-secondary-500);
-$clr-secondary-600: var(--clr-secondary-600);
+// Legacy
+$ff-display:$ff-body;$fs-d-xl:$fs-xxl;$fs-d-lg:$fs-xl;$fs-b-lead:$fs-lg;
+$fs-b-base:$fs-base;$fs-b-sm:$fs-sm;$fs-b-xs:$fs-xs;$fs-m-sm:$fs-mono;
+$fs-m-xs:$fs-mono;$space-2xs:$space-xs;$ls-ultra:$ls-mono;
+$duration-glacial:$duration-slower;$z-sticky:10;$z-nav:40;
+$clr-accent-muted-hover:$clr-accent-muted;$clr-header-bg:transparent;
+$clr-header-border:$clr-border;$clr-noise-opacity:0;$clr-bg-elevated:$clr-bg;
+$clr-accent-glow:$clr-accent-muted;
+$clr-terminal-green:$clr-string;$clr-terminal-dim:$clr-string;
 
-$clr-neutral-100: var(--clr-neutral-100);
-$clr-neutral-150: var(--clr-neutral-150);
-$clr-neutral-200: var(--clr-neutral-200);
-$clr-neutral-250: var(--clr-neutral-250);
-$clr-neutral-300: var(--clr-neutral-300);
-$clr-neutral-900: var(--clr-neutral-900);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ul[role=list],ol[role=list]{list-style:none}img,picture,svg,video{max-width:100%;display:block}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{min-height:100vh;background:$clr-bg;color:$clr-text-primary;font-family:$ff-body;font-size:$fs-base;font-weight:$fw-regular;line-height:$lh-normal;letter-spacing:$ls-normal;transition:background-color $duration-slower $ease-out-expo,color $duration-slow $ease-out-expo;overflow:hidden}
+::selection{background:$clr-accent-muted;color:$clr-text-primary}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:$clr-border-hover;border-radius:$radius-full}
+:focus-visible{outline:2px solid $clr-accent;outline-offset:2px;border-radius:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.text-accent{color:$clr-accent}
 
-$clr-header-shadow: var(--clr-header-shadow);
-$clr-card-shadow: var(--clr-card-shadow);
-$clr-bg: var(--clr-bg);
 
-$ff-primary: "Montserrat", sans-serif;
 
-body {
-  background-color: $clr-bg;
-  color: $clr-neutral-900;
-}
-
-$fw-regular: 300;
-$fw-semi-bold: 400;
-$fw-bold: 500;
-$fw-bolder: 600;
-$fw-full-bold: 700;
-
-$fs-100: 0.3125rem; //5
-$fs-150: 0.625rem; //10
-$fs-170: 0.75rem; //12
-$fs-200: 0.9375rem; //15
-$fs-250: 1rem; //16
-$fs-300: 1.125rem; //18
-$fs-400: 1.25rem; //20
-$fs-450: 1.5rem; // 24
-$fs-500: 1.625rem; //26
-$fs-600: 1.875rem; //30
-$fs-700: 3.75rem; //60
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: "Roboto", sans-serif;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: smooth !important;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  transition: all 500ms ease-in-out;
-}
-/* Added custom scrollbar */
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $clr-neutral-150;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $clr-neutral-250;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: $clr-neutral-300;
-}
-
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-}
-
-/* Utility classes */
-
-.text-neutral-900 {
-  color: $clr-neutral-900;
-}
-.text-neutral-100 {
-  color: $clr-neutral-100;
-}
-.text-neutral-250 {
-  color: $clr-neutral-250;
-}
-
-.text-primary-400 {
-  color: $clr-primary-400;
-}
-
-.text-primary-450 {
-  color: $clr-primary-450;
-}
-
-.text-primary-500 {
-  color: $clr-primary-500;
-}
-
-.bg-neutral-100 {
-  background-color: $clr-neutral-100;
-}
-.bg-primary-200 {
-  background-color: $clr-primary-200;
-}
-.bg-primary-400 {
-  background-color: $clr-primary-400;
-}
-.bg-primary-500 {
-  background-color: $clr-primary-500;
-}
-.bg-secondary-400 {
-  background-color: $clr-secondary-400;
-}
-
-.fw-regular {
-  font-weight: $fw-regular;
-}
-.fw-semi-bold {
-  font-weight: $fw-semi-bold;
-}
-.fw-bold {
-  font-weight: $fw-bold;
-}
-.fw-bolder {
-  font-weight: $fw-bolder;
-}
-.fw-full-bold {
-  font-weight: $fw-full-bold;
-}
-
-.fs-150 {
-  font-size: $fs-150;
-}
-.fs-170 {
-  font-size: $fs-170;
-}
-.fs-200 {
-  font-size: $fs-200;
-}
-.fs-250 {
-  font-size: $fs-250;
-}
-.fs-450 {
-  font-size: $fs-450;
-}
-.fs-500 {
-  font-size: $fs-500;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 500;
-  text-decoration: underline;
-  background: linear-gradient($clr-primary-500, $clr-secondary-600);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}

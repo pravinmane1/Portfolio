@@ -1,196 +1,169 @@
 @import "../../../../styles.scss";
 
 .contact-section {
-  min-height: 100vh;
-  padding: 4rem 1rem;
+  padding: $space-5xl 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 4rem;
-  justify-content: center;
-  animation: fade-in ease-in-out;
-  animation-timeline: view();
-  animation-range-start: cover;
-  animation-range-end: contain;
-}
 
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
+  @media (max-width: 768px) {
+    padding: $space-3xl 0;
   }
 }
 
-.card-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin: 0 4rem;
-  box-shadow: $clr-card-shadow 1px 12px 29px 0px;
+.section-header {
+  text-align: center;
+  margin-bottom: $space-3xl;
+  max-width: 480px;
 }
 
-.contact-information {
-  background: linear-gradient(
-    120deg,
-    $clr-secondary-300 0%,
-    $clr-primary-400 100%
-  );
-  color: white;
-  min-width: 20rem;
-  padding: 1rem;
-  padding-left: 2rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  flex-grow: 1;
-}
-
-.contact-items {
-  flex-flow: 1;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-
-.send-message {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  padding: 2rem 4rem;
-  background: rgb(128 128 128 / 10%);
-}
-
-.contact-title {
-  font-size: 1.5rem;
-  margin: 1rem 0rem 2rem;
-}
-
-.contact-items > a {
+// ── Card ────────────────────────────────────
+.contact-card {
   display: flex;
   flex-flow: row nowrap;
-  gap: 0.5rem;
-  align-items: center;
-  margin-bottom: 2rem;
-  color: unset;
-  text-decoration: unset;
+  width: 100%;
+  max-width: 800px;
+  border-radius: $radius-2xl;
+  overflow: hidden;
+  border: 1px solid $clr-border;
+  background: $clr-surface;
+  box-shadow: $shadow-md;
+
+  @media (max-width: 700px) {
+    flex-flow: column nowrap;
+  }
 }
 
-.contact-description {
-  margin-bottom: 4rem;
+// ── Form ────────────────────────────────────
+.contact-form-wrap {
+  flex: 1;
+  padding: $space-xl;
+  background: $clr-surface;
+
+  @media (max-width: 700px) {
+    padding: $space-lg;
+  }
 }
 
 .contact-form {
-  background: white;
-  min-width: 30rem;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $space-md;
 }
-.contact-form h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+
+.form-group {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $space-xs;
+
+  label {
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+    color: $clr-text-secondary;
+  }
+
+  input, textarea {
+    padding: $space-sm $space-md;
+    border: 1px solid $clr-border;
+    border-radius: $radius-lg;
+    background: $clr-bg;
+    color: $clr-text-primary;
+    font-family: $ff-primary;
+    font-size: $fs-sm;
+    transition: border-color $duration-fast $ease-out,
+                box-shadow $duration-fast $ease-out;
+
+    &::placeholder {
+      color: $clr-text-tertiary;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $clr-accent;
+      box-shadow: 0 0 0 3px $clr-accent-muted;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
 }
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #f9f9f9;
-  font-size: 16px;
-  color: #333;
+
+.form-error {
+  font-size: $fs-xs;
+  color: $clr-error;
 }
-.contact-form textarea {
-  resize: vertical;
-  height: 150px;
-}
-.contact-form button {
-  width: 100%;
-  padding: 15px;
-  background: $clr-secondary-300;
-  color: white;
+
+.btn-submit {
+  padding: $space-sm $space-xl;
+  background: $clr-accent;
+  color: #ffffff;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: $radius-lg;
   cursor: pointer;
-  transition: background 0.3s;
-}
+  align-self: flex-start;
+  transition: background $duration-fast $ease-out,
+              transform $duration-fast $ease-out;
 
-.contact-form button:hover {
-  background: $clr-secondary-500;
-}
-
-.contact-form button:disabled {
-  opacity: 0.5;
-  background: $clr-secondary-300;
-  cursor: default;
-}
-
-.error-container {
-  margin-top: -1rem;
-  margin-bottom: 0.25rem;
-}
-
-.error {
-  color: red;
-  font-size: 0.75rem;
-}
-
-.contact-item {
-  line-break: anywhere;
-}
-
-@media (max-width: 900px) {
-  .contact-section {
-    gap: 2rem;
-    margin: 0 2rem;
+  &:hover:not(:disabled) {
+    background: $clr-accent-hover;
+    transform: translateY(-1px);
   }
 
-  .card-container {
-    flex-flow: column nowrap;
-    margin: 0;
-  }
-
-  .send-message {
-    padding: 1rem;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
-@media (max-width: 480px) {
-  .contact-card {
-    flex-direction: column;
-    gap: 1rem;
+// ── Info Panel ──────────────────────────────
+.contact-info {
+  width: 280px;
+  flex-shrink: 0;
+  padding: $space-xl;
+  background: linear-gradient(160deg, $clr-gradient-start, $clr-gradient-end);
+  color: #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    padding: $space-lg;
+  }
+}
+
+.info-title {
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+  margin-bottom: $space-lg;
+}
+
+.info-items {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+}
+
+.info-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: $space-sm;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: $fs-sm;
+  transition: color $duration-fast $ease-out;
+
+  &:hover {
+    color: #ffffff;
   }
 
-  .contact-section {
-    margin: 0;
-    animation-range-start: -50%;
-  }
-
-  .send-message {
-    padding: 0;
-  }
-
-  .card-container {
-    gap: 1rem;
-    margin: 0;
-  }
-
-  .contact-form {
-    min-width: auto;
-  }
-
-  .contact-information {
-    padding: 2rem;
-  }
-
-  .contact-items > a {
-    flex-flow: column nowrap;
+  img {
+    opacity: 0.8;
   }
 }

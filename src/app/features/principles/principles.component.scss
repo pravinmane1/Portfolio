@@ -1,0 +1,32 @@
+@import "../../../styles.scss";
+
+.principles {
+  padding: $space-7xl 0;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: $space-xl;
+  padding-right: $space-xl;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: $space-4xl $space-md;
+  }
+}
+
+.principles-list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $space-3xl;
+}
+
+.principle-text {
+  font-size: $fs-xl;
+  color: $clr-text-secondary;
+  line-height: $lh-relaxed;
+  font-weight: $fw-regular;
+}
+
+.principle-accent {
+  color: $clr-text-primary;
+  font-weight: $fw-semibold;
+}

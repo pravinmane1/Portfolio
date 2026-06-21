@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToasterService } from './toaster.service';
 import { Subscription } from 'rxjs';
@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-toaster',
   standalone: true,
-  imports: [NgOptimizedImage, CommonModule],
+  imports: [CommonModule],
   templateUrl: './toaster.component.html',
   styleUrl: './toaster.component.scss',
 })

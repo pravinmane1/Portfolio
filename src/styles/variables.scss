@@ -1,49 +1,85 @@
-// mixin that enables css variables in light mode
-@mixin lighten() {
-  --clr-primary-200: #add8e6;
-  --clr-primary-400: #2da9e5;
-  --clr-primary-450: #2d00f7;
-  --clr-primary-500: #00008b;
+// ═══════════════════════════════════════════
+//  DEVELOPER WORKSPACE  ·  Design System v2
+//  Code editor aesthetic · One Dark inspired
+// ═══════════════════════════════════════════
 
-  --clr-secondary-300: #934def;
-  --clr-secondary-400: #d100d1;
-  --clr-secondary-500: #a100f2;
-  --clr-secondary-600: #6100ff;
+$ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$ff-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 
-  --clr-neutral-100: #ffffff;
-  --clr-neutral-150: #e8e8e8;
-  --clr-neutral-200: #dbcccc;
-  --clr-neutral-250: #808080;
-  --clr-neutral-300: #4f4f4f;
-  --clr-neutral-900: #000000;
+$fw-regular: 400; $fw-medium: 500; $fw-semibold: 600; $fw-bold: 700;
 
-  --clr-header-shadow: rgb(0 0 0 / 3%);
-  --clr-card-shadow: rgb(100 100 111 / 8%);
+$fs-hero: clamp(2.5rem, 5vw, 4rem);
+$fs-xxl:  clamp(1.75rem, 3vw, 2.5rem);
+$fs-xl:   1.25rem; $fs-lg: 1.125rem; $fs-base: 0.9375rem;
+$fs-sm:   0.8125rem; $fs-xs: 0.75rem; $fs-mono: 0.8125rem;
 
-  --clr-bg: white;
+$lh-tight: 1.2; $lh-normal: 1.6; $lh-relaxed: 1.75;
+$ls-tight: -0.015em; $ls-normal: -0.01em; $ls-mono: 0.02em;
+
+$space-xs: 0.5rem; $space-sm: 0.75rem; $space-md: 1rem; $space-lg: 1.5rem;
+$space-xl: 2rem; $space-2xl: 3rem; $space-3xl: 4rem; $space-4xl: 6rem;
+$space-5xl: 8rem;
+
+$radius-sm: 0.25rem; $radius-md: 0.5rem; $radius-lg: 0.75rem;
+$radius-xl: 1rem; $radius-full: 9999px;
+
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$duration-fast: 120ms; $duration-normal: 250ms;
+$duration-slow: 400ms; $duration-slower: 600ms;
+
+$z-base: 1; $z-above: 2; $z-terminal: 40; $z-tabs: 45; $z-statusbar: 50; $z-boot: 100;
+$statusbar-h: 28px; $tabs-h: 36px; $terminal-h: 44px;
+
+// ── Editor Dark Tokens ──────────────────────
+@mixin darken() {
+  --clr-bg:            #1A1B26;
+  --clr-surface:       #1F2130;
+  --clr-surface-hover: #292C3A;
+  --clr-border:        #2F3344;
+  --clr-border-hover:  #3B3F52;
+
+  --clr-text-primary:   #C0CAF5;
+  --clr-text-secondary: #9AA5CE;
+  --clr-text-tertiary:  #565F89;
+
+  --clr-accent:         #7AA2F7;   // keyword blue
+  --clr-accent-hover:   #9DBDF9;
+  --clr-accent-muted:   rgba(122, 162, 247, 0.1);
+
+  --clr-string:         #9ECE6A;   // string green
+  --clr-function:       #E0AF68;   // function yellow
+  --clr-comment:        #565F89;   // comment dim
+  --clr-variable:       #C0CAF5;   // variable white
+  --clr-constant:       #FF9E64;   // constant orange
+  --clr-error:          #F7768E;   // error red
+
+  --clr-terminal-bg:    rgba(26, 27, 38, 0.95);
+  --clr-line-number:    #3B4261;
 }
 
-// mixin that enables css variables in dark mode
-@mixin darken() {
-  --clr-primary-200: #042732;
-  --clr-primary-400: #2da9e5;
-  --clr-primary-450: #2d00f7;
-  --clr-primary-500: #ffffff;
+@mixin lighten() {
+  --clr-bg:            #FAFAFA;
+  --clr-surface:       #FFFFFF;
+  --clr-surface-hover: #F4F4F5;
+  --clr-border:        #E4E4E7;
+  --clr-border-hover:  #D4D4D8;
 
-  --clr-secondary-300: #934def;
-  --clr-secondary-400: #d100d1;
-  --clr-secondary-500: #a100f2;
-  --clr-secondary-600: #ffffff;
+  --clr-text-primary:   #1A1B26;
+  --clr-text-secondary: #52525B;
+  --clr-text-tertiary:  #A1A1AA;
 
-  --clr-neutral-100: #000000;
-  --clr-neutral-150: #4f4f4f;
-  --clr-neutral-200: #808080;
-  --clr-neutral-250: #dbcccc;
-  --clr-neutral-300: #e8e8e8;
-  --clr-neutral-900: #ffffff;
+  --clr-accent:         #3D59A1;
+  --clr-accent-hover:   #2E4A8E;
+  --clr-accent-muted:   rgba(61, 89, 161, 0.08);
 
-  --clr-header-shadow: rgba(255, 255, 255, 0.03);
-  --clr-card-shadow: rgba(255, 255, 255, 0.08);
+  --clr-string:         #487C34;
+  --clr-function:       #8C6A2E;
+  --clr-comment:        #A1A1AA;
+  --clr-variable:       #1A1B26;
+  --clr-constant:       #B15C2E;
+  --clr-error:          #C43E4E;
 
-  --clr-bg: rgb(53, 53, 53);
+  --clr-terminal-bg:    rgba(250, 250, 250, 0.95);
+  --clr-line-number:    #D4D4D8;
 }

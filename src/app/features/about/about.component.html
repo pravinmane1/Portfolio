@@ -1,71 +1,53 @@
-<section class="about-section" id="about">
-  <img
-    ngSrc="/assets/about.webp"
-    width="250"
-    height="450"
-    class="hero-image"
-    ngSrcset="100w, 200w, 300w"
-    alt="about image"
-    priority
-  />
-  <div class="about-text">
-    <h1 class="section-title">About me</h1>
-    <p>
-      <span style="font-size: 2rem">👋</span> Hi, I'm Pravin, a
-      <span>full stack software engineer</span>. My story with web development
-      started long back in 2014 when I tried to build a simple website<span
-        style="font-size: 1.25rem"
-        >💻</span
-      >
-      using HTML and CSS, see it come to life on a screen was exciting and
-      ignited my passion for coding.
+<section id="about" class="about-section">
+  <div class="about-image-wrapper" appInView>
+    <img
+      ngSrc="/assets/about.webp"
+      width="300"
+      height="400"
+      class="about-image"
+      alt="Pravin Mane"
+      priority
+    />
+  </div>
+  <div class="about-content" appInView>
+    <h2 class="section-title">About</h2>
+    <p class="about-lead stagger-1" appInView>
+      I'm a software engineer who believes great front-end work is invisible —
+      when it's done right, nobody notices. They just get things done faster.
     </p>
-    <p>
-      Inspired by the endless possibilities of technology, I decided to dive
-      deeper into computer engineering
-      <span style="font-size: 1.5rem">🎓</span> in 2016, during engineering I
-      learnt android and
-      <span
-        >built multiple <span style="font-size: 1.5rem">📱</span>android
-        applications</span
-      >
-      as my side interest even freelanced few projects.
+    <p class="stagger-2" appInView>
+      I've been building web applications professionally since 2020, starting at
+      <strong>SLB</strong> where I cut my teeth on enterprise Angular and .NET Core.
+      There, I led the component restructuring of a flagship application, improving
+      load performance through dynamic data fetching and NgRx state management.
     </p>
-    <p>
-      After completing my graduation, I joined
-      <span
-        ><a href="https://www.slb.com" target="_blank" class="hyperlink"
-          >SLB <span style="font-size: 1.25rem">🏢</span></a
-        ></span
-      >
-      in 2020 where I got opportunity to explore web development. I developed my
-      expertise in
-      <span> Angular, JavaScript, TypeScript, .NET Core </span
-      ><span style="font-size: 1.25rem">👨🏻‍💻</span>which I used to contribute in
-      our project in SLB.
+    <p class="stagger-3" appInView>
+      Since 2024, I've been at <strong>JP Morgan Chase & Co.</strong>, building
+      and maintaining Angular applications at banking scale — where correctness,
+      accessibility, and performance aren't optional. I work across the full
+      TypeScript / Angular / .NET stack, with AWS infrastructure.
+    </p>
+    <p class="stagger-4" appInView>
+      Before all this, I was the kid in 2014 teaching myself HTML and CSS on a
+      borrowed laptop, just to see something I built appear on a screen. That same
+      curiosity still drives me today.
     </p>
 
-    <p>
-      I have recently joined
-      <a
-        href="https://www.jpmorganchase.com/"
-        target="_blank"
-        class="hyperlink"
-      >
-        <span style="color: #6f3d1e; font-weight: 600"
-          >JP Morgan Chase & Co.🌟</span
-        ></a
-      >
-      and I am excited to explore the new horizons of the new domain.
-    </p>
-    <p>
-      Throughout my journey, I've faced numerous challenges<span
-        style="font-size: 1.5rem"
-        >🏋️</span
-      >, from debugging stubborn code to staying updated with the latest
-      technologies. However, each obstacle has only strengthened my
-      determination and skills🎖️. I keep exploring and learning new things
-      everyday 📆 .
-    </p>
+    <!-- Skills Grid -->
+    <div class="skills-inline">
+      <h3 class="skills-heading">Technologies I work with</h3>
+      <div class="skills-grid">
+        @for (category of skillCategories; track category.name) {
+        <div class="skill-category">
+          <h4 class="category-name">{{ category.name }}</h4>
+          <ul role="list" class="skill-list">
+            @for (skill of category.items; track skill) {
+            <li class="skill-tag">{{ skill }}</li>
+            }
+          </ul>
+        </div>
+        }
+      </div>
+    </div>
   </div>
 </section>

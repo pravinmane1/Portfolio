@@ -1,0 +1,31 @@
+<section id="connect" class="connect">
+  <div class="connect-inner" appInView>
+    <div class="connect-portrait">
+      <div class="connect-portrait-glow"></div>
+      <img
+        ngSrc="/assets/hero_image.webp"
+        width="80"
+        height="80"
+        class="connect-avatar"
+        alt="Pravin Mane"
+        loading="lazy"
+      />
+    </div>
+    <p class="section-label">Connect</p>
+    <h2 class="connect-headline">
+      Let's build something<br />worth shipping.
+    </h2>
+    <a
+      [href]="'mailto:' + email"
+      class="connect-email"
+      (click)="copyEmail()"
+    >
+      {{ email }}
+      <span class="email-hint">Click to email · Copy to clipboard</span>
+    </a>
+    <div class="connect-social">
+      <app-social-links [onlyIcons]="true"></app-social-links>
+    </div>
+    <p class="connect-location">Pune, India</p>
+  </div>
+</section>

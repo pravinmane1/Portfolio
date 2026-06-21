@@ -1,9 +1,25 @@
+@import "../../../../styles.scss";
+
 .footer {
-  margin-top: -150px;
+  padding: $space-2xl $space-xl;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: $space-xl $space-md;
+  }
 }
 
-@media (max-width: 480px) {
-  .footer {
-    margin-top: auto;
-  }
+.footer-divider {
+  height: 1px;
+  background: $clr-border;
+  margin-bottom: $space-lg;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-text {
+  font-family: $ff-mono;
+  font-size: $fs-mono;
+  color: $clr-text-tertiary;
 }
